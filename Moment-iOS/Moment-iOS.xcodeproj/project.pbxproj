@@ -11,6 +11,8 @@
 		E9AF11D12A98042300A8A1C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF11D02A98042300A8A1C4 /* ContentView.swift */; };
 		E9AF11D32A98042500A8A1C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9AF11D22A98042500A8A1C4 /* Assets.xcassets */; };
 		E9AF11D62A98042500A8A1C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9AF11D52A98042500A8A1C4 /* Preview Assets.xcassets */; };
+		E9AF11F22A991C9900A8A1C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF11F12A991C9900A8A1C4 /* LoginViewController.swift */; };
+		E9AF11F62A992AC900A8A1C4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF11F52A992AC900A8A1C4 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		E9AF11D02A98042300A8A1C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E9AF11D22A98042500A8A1C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9AF11D52A98042500A8A1C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E9AF11F12A991C9900A8A1C4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E9AF11F52A992AC900A8A1C4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +55,15 @@
 		E9AF11CD2A98042300A8A1C4 /* Moment-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				E9AF11E02A9870E500A8A1C4 /* Extensions */,
-				E9AF11DF2A9870E200A8A1C4 /* Model */,
-				E9AF11DE2A9870D500A8A1C4 /* Service */,
-				E9AF11DC2A9870C300A8A1C4 /* Core */,
+				E9AF11E02A9870E500A8A1C4 /* Models */,
+				E9AF11DF2A9870E200A8A1C4 /* Views */,
+				E9AF11DE2A9870D500A8A1C4 /* ViewModels */,
+				E9AF11E82A99076900A8A1C4 /* Services */,
+				E9AF11EB2A9907A200A8A1C4 /* Helpers */,
+				E9AF11EA2A99079E00A8A1C4 /* Networking */,
+				E9AF11E92A99079C00A8A1C4 /* Persistence */,
+				E9AF11EC2A9907E100A8A1C4 /* Utilities */,
+				E9AF11ED2A9907EF00A8A1C4 /* App */,
 				E9AF11D02A98042300A8A1C4 /* ContentView.swift */,
 				E9AF11CE2A98042300A8A1C4 /* Moment_iOSApp.swift */,
 				E9AF11D22A98042500A8A1C4 /* Assets.xcassets */,
@@ -71,88 +80,93 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		E9AF11DC2A9870C300A8A1C4 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				E9AF11E72A98715300A8A1C4 /* Componets */,
-				E9AF11E62A98714800A8A1C4 /* Profile */,
-				E9AF11E52A98713B00A8A1C4 /* Explore */,
-				E9AF11E42A98713200A8A1C4 /* Notifications */,
-				E9AF11E32A98712B00A8A1C4 /* Messages */,
-				E9AF11E22A98712300A8A1C4 /* MainTab */,
-				E9AF11E12A98711100A8A1C4 /* Feed */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		E9AF11DE2A9870D500A8A1C4 /* Service */ = {
+		E9AF11DE2A9870D500A8A1C4 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Service;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		E9AF11DF2A9870E200A8A1C4 /* Model */ = {
+		E9AF11DF2A9870E200A8A1C4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9AF11F02A9909EB00A8A1C4 /* Authentication */,
+				E9AF11EF2A99082E00A8A1C4 /* Main */,
+				E9AF11EE2A99082300A8A1C4 /* Profile */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E9AF11E02A9870E500A8A1C4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		E9AF11E02A9870E500A8A1C4 /* Extensions */ = {
+		E9AF11E82A99076900A8A1C4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Extensions;
+			path = Services;
 			sourceTree = "<group>";
 		};
-		E9AF11E12A98711100A8A1C4 /* Feed */ = {
+		E9AF11E92A99079C00A8A1C4 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Feed;
+			path = Persistence;
 			sourceTree = "<group>";
 		};
-		E9AF11E22A98712300A8A1C4 /* MainTab */ = {
+		E9AF11EA2A99079E00A8A1C4 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = MainTab;
+			path = Networking;
 			sourceTree = "<group>";
 		};
-		E9AF11E32A98712B00A8A1C4 /* Messages */ = {
+		E9AF11EB2A9907A200A8A1C4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Messages;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
-		E9AF11E42A98713200A8A1C4 /* Notifications */ = {
+		E9AF11EC2A9907E100A8A1C4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Notifications;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
-		E9AF11E52A98713B00A8A1C4 /* Explore */ = {
+		E9AF11ED2A9907EF00A8A1C4 /* App */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Explore;
+			path = App;
 			sourceTree = "<group>";
 		};
-		E9AF11E62A98714800A8A1C4 /* Profile */ = {
+		E9AF11EE2A99082300A8A1C4 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		E9AF11E72A98715300A8A1C4 /* Componets */ = {
+		E9AF11EF2A99082E00A8A1C4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Componets;
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E9AF11F02A9909EB00A8A1C4 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E9AF11F12A991C9900A8A1C4 /* LoginViewController.swift */,
+				E9AF11F52A992AC900A8A1C4 /* SignUpViewController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,7 +239,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9AF11F22A991C9900A8A1C4 /* LoginViewController.swift in Sources */,
 				E9AF11D12A98042300A8A1C4 /* ContentView.swift in Sources */,
+				E9AF11F62A992AC900A8A1C4 /* SignUpViewController.swift in Sources */,
 				E9AF11CF2A98042300A8A1C4 /* Moment_iOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
