@@ -51,8 +51,12 @@
 		E9AF11CD2A98042300A8A1C4 /* Moment-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				E9AF11CE2A98042300A8A1C4 /* Moment_iOSApp.swift */,
+				E9AF11E02A9870E500A8A1C4 /* Extensions */,
+				E9AF11DF2A9870E200A8A1C4 /* Model */,
+				E9AF11DE2A9870D500A8A1C4 /* Service */,
+				E9AF11DC2A9870C300A8A1C4 /* Core */,
 				E9AF11D02A98042300A8A1C4 /* ContentView.swift */,
+				E9AF11CE2A98042300A8A1C4 /* Moment_iOSApp.swift */,
 				E9AF11D22A98042500A8A1C4 /* Assets.xcassets */,
 				E9AF11D42A98042500A8A1C4 /* Preview Content */,
 			);
@@ -65,6 +69,90 @@
 				E9AF11D52A98042500A8A1C4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E9AF11DC2A9870C300A8A1C4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E9AF11E72A98715300A8A1C4 /* Componets */,
+				E9AF11E62A98714800A8A1C4 /* Profile */,
+				E9AF11E52A98713B00A8A1C4 /* Explore */,
+				E9AF11E42A98713200A8A1C4 /* Notifications */,
+				E9AF11E32A98712B00A8A1C4 /* Messages */,
+				E9AF11E22A98712300A8A1C4 /* MainTab */,
+				E9AF11E12A98711100A8A1C4 /* Feed */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E9AF11DE2A9870D500A8A1C4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E9AF11DF2A9870E200A8A1C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E9AF11E02A9870E500A8A1C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E9AF11E12A98711100A8A1C4 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		E9AF11E22A98712300A8A1C4 /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MainTab;
+			sourceTree = "<group>";
+		};
+		E9AF11E32A98712B00A8A1C4 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		E9AF11E42A98713200A8A1C4 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		E9AF11E52A98713B00A8A1C4 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		E9AF11E62A98714800A8A1C4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E9AF11E72A98715300A8A1C4 /* Componets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Componets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
