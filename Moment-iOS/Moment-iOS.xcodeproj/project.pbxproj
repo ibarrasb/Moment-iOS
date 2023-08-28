@@ -13,6 +13,7 @@
 		E9AF11D62A98042500A8A1C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9AF11D52A98042500A8A1C4 /* Preview Assets.xcassets */; };
 		E9AF11F22A991C9900A8A1C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF11F12A991C9900A8A1C4 /* LoginViewController.swift */; };
 		E9AF11F62A992AC900A8A1C4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF11F52A992AC900A8A1C4 /* SignUpViewController.swift */; };
+		E9AF11F82A9C6B1A00A8A1C4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF11F72A9C6B1A00A8A1C4 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		E9AF11D52A98042500A8A1C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E9AF11F12A991C9900A8A1C4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E9AF11F52A992AC900A8A1C4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E9AF11F72A9C6B1A00A8A1C4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 		E9AF11EE2A99082300A8A1C4 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				E9AF11F72A9C6B1A00A8A1C4 /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			files = (
 				E9AF11F22A991C9900A8A1C4 /* LoginViewController.swift in Sources */,
 				E9AF11D12A98042300A8A1C4 /* ContentView.swift in Sources */,
+				E9AF11F82A9C6B1A00A8A1C4 /* ProfileViewController.swift in Sources */,
 				E9AF11F62A992AC900A8A1C4 /* SignUpViewController.swift in Sources */,
 				E9AF11CF2A98042300A8A1C4 /* Moment_iOSApp.swift in Sources */,
 			);
