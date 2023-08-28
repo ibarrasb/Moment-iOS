@@ -17,7 +17,7 @@ struct ProfileViewController: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(UIColor.darkGray).edgesIgnoringSafeArea(.all) // Set the background color here
+                Color(UIColor.darkGray).edgesIgnoringSafeArea(.all)
                 
                 VStack {
                     HStack {
@@ -37,8 +37,8 @@ struct ProfileViewController: View {
                                 .padding(.trailing, 20)
                         }
                     }
-                    let user = User(name: "Eddie Ibarra", bio: "Dallas // Software Developer", friendCount: 200, isPrivate: false)
-                    ProfileContent(user: user) // Pass the user object here
+                    let user = User(name: "Eddie Ibarra", bio: "Dallas // Moment CEO", friendCount: 200, isPrivate: false)
+                    ProfileContent(user: user)
                 }
             }
         }
@@ -46,7 +46,7 @@ struct ProfileViewController: View {
 }
 
 struct ProfileContent: View {
-    var user: User // Use the User object instead of individual properties
+    var user: User
 
     @State private var selectedTab: Tab = .list
 
@@ -60,7 +60,7 @@ struct ProfileContent: View {
             Button(action: {
                 // Handle profile picture update
             }) {
-                Image("profile_picture") // Replace with your profile picture asset name
+                Image("profile_picture")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 120, height: 120)
@@ -102,9 +102,21 @@ struct ProfileContent: View {
                 Text("\(user.friendCount) friends")
                     .font(.subheadline)
                     .foregroundColor(.blue)
-                  
             }
             .padding(.bottom, 10)
+            
+            Button(action: {
+                // Handle edit profile action
+            }) {
+                Text("Edit Profile")
+                    .font(.subheadline)
+                    .foregroundColor(.white)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 10)
+                    .background(Color.blue)
+                    .cornerRadius(5)
+            }
+
 
             HStack(spacing: 20) {
                 CustomTabButton(title: "List", isSelected: selectedTab == .list) {
