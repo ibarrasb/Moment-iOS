@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FollowingContent: View {
+
+
     var body: some View {
         Text("Following Content Placeholder")
             .font(.headline)
@@ -16,37 +18,36 @@ struct FollowingContent: View {
 }
 
 struct FeedViewController: View {
+
     var body: some View {
         NavigationView {
             ZStack {
                 Color(UIColor.darkGray).edgesIgnoringSafeArea(.all)
-                
-                VStack(spacing: 0) { // Add spacing of 0
+
+                VStack(spacing: 0) {
                     HStack {
-                        NavigationLink(destination: SearchView()) { // Navigate to SearchView
-                            Image(systemName: "magnifyingglass")
-                                .font(.system(size: 20))
-                                .foregroundColor(.white)
-                        }
-                        .padding(.leading, 20)
-                        
-                        Text("Moment") // Add the app name here
+                    
+                        Text("Moment")
                             .font(Font.custom("Bodoni 72 Smallcaps", size: 50))
                             .foregroundColor(.white)
                             .padding(.leading, 20)
-                        
+
                         Spacer()
-                        
-                        NavigationLink(destination: NotificationsView()) { // Navigate to NotificationsView
-                            Image(systemName: "bell")
-                                .font(.system(size: 20))
-                                .foregroundColor(.white)
+
+                        NavigationLink(destination: NotificationsView()) {
+                            ZStack {
+                                Image(systemName: "magnifyingglass")
+                                    .imageScale(.large)
+                                    .foregroundColor(.white)
+                                
+                           
+                            }
                         }
                         .padding(.trailing, 20)
                     }
-                    .padding(.top, -370) // Add top padding for the HStack
-                    
-                    FollowingContent() // Display the content of the users the person follows
+                    .padding(.top, -345)
+
+                    FollowingContent()
                 }
             }
         }
@@ -58,4 +59,3 @@ struct FeedViewController_Previews: PreviewProvider {
         FeedViewController()
     }
 }
-

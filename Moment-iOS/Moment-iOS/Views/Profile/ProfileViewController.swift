@@ -13,6 +13,8 @@ struct User {
     let isPrivate: Bool
 }
 
+
+
 struct ProfileViewController: View {
     var body: some View {
         NavigationView {
@@ -37,7 +39,7 @@ struct ProfileViewController: View {
                                 .padding(.trailing, 20)
                         }
                     }
-                    let user = User(name: "Eddie Ibarra", bio: "Dallas // Moment CEO", friendCount: 200, isPrivate: false)
+                    let user = User(name: "Eddie Ibarra", bio: "Dallas // ", friendCount: 200, isPrivate: false)
                     ProfileContent(user: user)
                 }
             }
@@ -49,7 +51,8 @@ struct ProfileContent: View {
     var user: User
 
     @State private var selectedTab: Tab = .list
-
+    
+    
     enum Tab {
         case list
         case calendar
@@ -60,6 +63,7 @@ struct ProfileContent: View {
             Button(action: {
                 // Handle profile picture update
             }) {
+                
                 Image("profile_picture")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -104,18 +108,21 @@ struct ProfileContent: View {
                     .foregroundColor(.blue)
             }
             .padding(.bottom, 10)
-            
-            Button(action: {
-                // Handle edit profile action
-            }) {
-                Text("Edit Profile")
-                    .font(.subheadline)
-                    .foregroundColor(.white)
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 10)
-                    .background(Color.blue)
-                    .cornerRadius(5)
-            }
+       
+               
+                Button(action: {
+                    // Handle edit profile action
+                }) {
+                    Text("Edit Profile")
+                        .font(.subheadline)
+                        .foregroundColor(.white)
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 10)
+                        .background(Color.blue)
+                        .cornerRadius(5)
+                }
+               
+     
 
 
             HStack(spacing: 20) {
