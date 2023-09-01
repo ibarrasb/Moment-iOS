@@ -28,23 +28,29 @@ struct ProfileViewController: View {
                             .foregroundColor(.white)
                             .padding(.leading, 20)
                         Spacer()
-                        Button(action: {
-                            // Handle edit profile action
-                        }) {
+                        
+                        NavigationLink(destination: SettingsViewController().navigationBarBackButtonHidden(true)) {
                             Image(systemName: "gear")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 25, height: 25)
                                 .foregroundColor(.white)
                                 .padding(.trailing, 20)
+                                
                         }
+                        
                     }
+                    
+                    
+                    // Move the user and ProfileContent here
                     let user = User(name: "Eddie Ibarra", bio: "Dallas // ", friendCount: 200, isPrivate: false)
                     ProfileContent(user: user)
                 }
             }
         }
+        
     }
+    
 }
 
 struct ProfileContent: View {

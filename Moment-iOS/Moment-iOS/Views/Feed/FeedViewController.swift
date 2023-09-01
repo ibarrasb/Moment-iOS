@@ -34,7 +34,7 @@ struct FeedViewController: View {
 
                         Spacer()
 
-                        NavigationLink(destination: NotificationsView()) {
+                        NavigationLink(destination: SearchView().navigationBarBackButtonHidden(true)) {
                             ZStack {
                                 Image(systemName: "magnifyingglass")
                                     .imageScale(.large)

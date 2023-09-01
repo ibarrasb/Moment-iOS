@@ -7,7 +7,7 @@ import SwiftUI
 
 struct MainTabViewController: View {
     @State private var selectedIndex = 0
-    
+
     var body: some View {
         TabView(selection: $selectedIndex) {
             FeedViewController()
@@ -24,13 +24,20 @@ struct MainTabViewController: View {
                 .tabItem{
                     Image(systemName: "person.3.fill")
                 }.tag(1)
-            FeedViewController()
+            CreateViewController()
                 .onTapGesture {
                     self.selectedIndex = 2
                 }
                 .tabItem{
                     Image(systemName: "capsule.inset.filled")
                 }.tag(2)
+            MessagesViewController()
+                .onTapGesture {
+                    self.selectedIndex = 3
+                }
+                .tabItem{
+                    Image(systemName: "tray")
+                }.tag(3)
             ProfileViewController()
                 .onTapGesture {
                     self.selectedIndex = 3

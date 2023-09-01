@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9A90D5C2AA26757001D7B59 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A90D5B2AA26757001D7B59 /* CreateViewController.swift */; };
+		E9A90D5E2AA267DA001D7B59 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A90D5D2AA267DA001D7B59 /* SettingsViewController.swift */; };
+		E9A90D612AA28D67001D7B59 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A90D602AA28D67001D7B59 /* MessagesViewController.swift */; };
 		E9AA14632A9F19CA0012158B /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA14622A9F19CA0012158B /* MainTabViewController.swift */; };
 		E9AA14662A9F32180012158B /* EngagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA14652A9F32180012158B /* EngagementViewController.swift */; };
 		E9AF11CF2A98042300A8A1C4 /* Moment_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF11CE2A98042300A8A1C4 /* Moment_iOSApp.swift */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E9A90D5B2AA26757001D7B59 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		E9A90D5D2AA267DA001D7B59 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E9A90D602AA28D67001D7B59 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		E9AA14622A9F19CA0012158B /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		E9AA14652A9F32180012158B /* EngagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngagementViewController.swift; sourceTree = "<group>"; };
 		E9AF11CB2A98042300A8A1C4 /* Moment-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moment-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +56,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E9A90D5A2AA26738001D7B59 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				E9A90D5B2AA26757001D7B59 /* CreateViewController.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		E9A90D5F2AA28D42001D7B59 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				E9A90D602AA28D67001D7B59 /* MessagesViewController.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
 		E9AA14612A9F19A70012158B /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +148,8 @@
 				E9AF11EE2A99082300A8A1C4 /* Profile */,
 				E9AF11FE2A9D5A7F00A8A1C4 /* UserProfiles */,
 				E9AF12012A9D650000A8A1C4 /* Feed */,
+				E9A90D5F2AA28D42001D7B59 /* Messages */,
+				E9A90D5A2AA26738001D7B59 /* Create */,
 				E9AF12042A9D68E500A8A1C4 /* Notifications */,
 				E9AF12072A9D69AA00A8A1C4 /* Search */,
 				E9AA14612A9F19A70012158B /* MainTab */,
@@ -186,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				E9AF11F72A9C6B1A00A8A1C4 /* ProfileViewController.swift */,
+				E9A90D5D2AA267DA001D7B59 /* SettingsViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -316,7 +341,10 @@
 				E9AA14662A9F32180012158B /* EngagementViewController.swift in Sources */,
 				E9AA14632A9F19CA0012158B /* MainTabViewController.swift in Sources */,
 				E9AF11F62A992AC900A8A1C4 /* SignUpViewController.swift in Sources */,
+				E9A90D612AA28D67001D7B59 /* MessagesViewController.swift in Sources */,
+				E9A90D5C2AA26757001D7B59 /* CreateViewController.swift in Sources */,
 				E9AF11CF2A98042300A8A1C4 /* Moment_iOSApp.swift in Sources */,
+				E9A90D5E2AA267DA001D7B59 /* SettingsViewController.swift in Sources */,
 				E9AF12032A9D654600A8A1C4 /* FeedViewController.swift in Sources */,
 				E9AF12062A9D696C00A8A1C4 /* NotificationsView.swift in Sources */,
 			);

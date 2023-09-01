@@ -11,7 +11,6 @@ struct EngagementViewController: View {
     
     enum Tab {
         case notifications
-        case messages
         case friendRequests
     }
     
@@ -23,10 +22,7 @@ struct EngagementViewController: View {
                 CustomTabButton(title: "Notifications", isSelected: selectedTab == .notifications) {
                     selectedTab = .notifications
                 }
-                
-                CustomTabButton(title: "Messages", isSelected: selectedTab == .messages) {
-                    selectedTab = .messages
-                }
+              
                 
                 CustomTabButton(title: "Requests", isSelected: selectedTab == .friendRequests) {
                     selectedTab = .friendRequests
@@ -37,8 +33,6 @@ struct EngagementViewController: View {
             
             if selectedTab == .notifications {
                 Text("Notifications Content")
-            } else if selectedTab == .messages {
-                Text("Messages Content")
             } else if selectedTab == .friendRequests {
                 Text("Friend Requests Content")
             }
