@@ -10,64 +10,72 @@ import SwiftUI
 struct LoginView: View {
     @State private var username = ""
     @State private var password = ""
-    
+    @State private var isLoggedIn = false // Added a state variable for tracking login status
+
     var body: some View {
-        VStack {
-            
-            Spacer()
-            Text("Moment")
-                .font(.custom("BodoniSvtyTwoSCITCTT-Book", size: 60))
-                .foregroundColor(.white)
-                .padding(.bottom, 20)
-    
-            TextField("Username", text: $username)
-                .padding()
-                .background(Color(UIColor.systemGray6))
-                .cornerRadius(5)
-                .padding(.bottom, 20)
-            
-            SecureField("Password", text: $password)
-                .padding()
-                .background(Color(UIColor.systemGray6))
-                .cornerRadius(5)
-                .padding(.bottom, 20)
-            
-            Button(action: {
-                // Handle login action
-            }) {
-                Text("Login")
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.blue)
-                    .cornerRadius(5)
-            }
-            
-            HStack {
+        NavigationView {
+            VStack {
                 Spacer()
+                Text("Moment")
+                    .font(.custom("BodoniSvtyTwoSCITCTT-Book", size: 60))
+                    .foregroundColor(.white)
+                    .padding(.bottom, 20)
+    
+                TextField("Username", text: $username)
+                    .padding()
+                    .background(Color(UIColor.systemGray6))
+                    .cornerRadius(5)
+                    .padding(.bottom, 20)
+            
+                SecureField("Password", text: $password)
+                    .padding()
+                    .background(Color(UIColor.systemGray6))
+                    .cornerRadius(5)
+                    .padding(.bottom, 20)
+            
                 Button(action: {
-                    // Handle forgot password action
+                    // Simulating a successful login here, you should replace this with your actual login logic
+                    if username == "Ebarra" && password == "1234" {
+                        isLoggedIn = true // Set the state variable to true for a successful login
+                    }
                 }) {
-                    Text("Forgot Password?")
-                        .foregroundColor(.blue)
+                    Text("Login")
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(5)
+                }
+            
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        // Handle forgot password action
+                    }) {
+                        Text("Forgot Password?")
+                            .foregroundColor(.blue)
+                    }
+                }
+                .padding(.top, 10)
+            
+                Spacer()
+            
+                HStack {
+                    Text("Don't have an account?")
+                    Button(action: {
+                        // Handle sign up action
+                    }) {
+                        Text("Sign Up")
+                            .foregroundColor(.blue)
+                    }
                 }
             }
-            .padding(.top, 10)
-            
-            Spacer()
-            
-            HStack {
-                Text("Don't have an account?")
-                Button(action: {
-                    // Handle sign up action
-                }) {
-                    Text("Sign Up")
-                        .foregroundColor(.blue)
-                }
+            .padding()
+            .background(Color(UIColor.darkGray)) // Set the background color here
+            .fullScreenCover(isPresented: $isLoggedIn) {
+                MainTabViewController() // Navigate to MainTabViewController when isLoggedIn is true
             }
         }
-        .padding()
-        .background(Color(UIColor.darkGray)) // Set the background color here
     }
 }
 
