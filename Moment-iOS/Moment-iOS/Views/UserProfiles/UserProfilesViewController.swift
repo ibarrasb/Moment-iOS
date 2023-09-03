@@ -52,6 +52,7 @@ struct UserProfilesViewController: View {
                                 selectedTab = .calendar
                             }
                         }
+                        .padding(.top, 25)
                         .padding(.bottom, 10)
 
                         if selectedTab == .list {
@@ -73,6 +74,8 @@ struct UserProfilesViewController: View {
 
 struct UserProfileContent: View {
     var user: UserProfileUser
+    
+    @State private var isFriendRequestPending = false
 
     var body: some View {
         VStack(spacing: 10) {
@@ -132,29 +135,50 @@ struct UserProfileContent: View {
             .padding(.bottom, 10)
             
             if user.isFriend {
-                Button(action: {
-                    // Handle manage friendship action
-                }) {
-                    Text("Manage Friendship")
-                        .font(.subheadline)
-                        .foregroundColor(.white)
-                        .padding(.vertical, 10)
-                        .padding(.horizontal, 10)
-                        .background(Color.gray.opacity(0.5))
-                        .cornerRadius(5)
+                HStack{
+                    Button(action: {
+                        // Handle manage friendship action
+                    }) {
+                        Text("Manage Friendship")
+                            .font(.subheadline)
+                            .foregroundColor(.white)
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 10)
+                            .background(Color.gray.opacity(0.5))
+                            .cornerRadius(5)
+                    }
+                    Button(action: {
+                        // Handle manage friendship action
+                    }) {
+                        Text("Message")
+                            .font(.subheadline)
+                            .foregroundColor(.white)
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 40)
+                            .background(Color.gray.opacity(0.5))
+                            .cornerRadius(5)
+                    }
                 }
             } else {
                 Button(action: {
-                    // Handle add friend action
+                    if isFriendRequestPending {
+                        // Cancel the friend request
+                        // Update your data or perform any necessary actions here
+                    } else {
+                        // Send friend request
+                        // Update your data or perform any necessary actions here
+                    }
+                    isFriendRequestPending.toggle()
                 }) {
-                    Text("Add Friend")
+                    Text(isFriendRequestPending ? "Pending" : "Add Friend")
                         .font(.subheadline)
                         .foregroundColor(.white)
                         .padding(.vertical, 10)
                         .padding(.horizontal, 10)
-                        .background(Color.blue)
+                        .background(isFriendRequestPending ? Color.gray.opacity(0.5) : Color.blue)
                         .cornerRadius(5)
                 }
+
             }
         }
         .padding(.horizontal)
@@ -167,7 +191,7 @@ struct UserProfileContent: View {
 
 struct UserProfilesViewController_Previews: PreviewProvider {
     static var previews: some View {
-        let user = UserProfileUser(name: "John Doe", bio: "bio", friendCount: 250, isPrivate: true, isFriend: true)
+        let user = UserProfileUser(name: "John Doe", bio: "bio", friendCount: 250, isPrivate: true, isFriend: false)
         let content = UserContent()
         return UserProfilesViewController(user: user, content: content)
     }
