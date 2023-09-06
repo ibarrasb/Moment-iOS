@@ -11,6 +11,7 @@ struct LoginView: View {
     @State private var username = ""
     @State private var password = ""
     @State private var isLoggedIn = false // Added a state variable for tracking login status
+    @State private var isSignUpViewPresented = false
 
     var body: some View {
         NavigationView {
@@ -61,19 +62,22 @@ struct LoginView: View {
                 Spacer()
             
                 HStack {
-                    Text("Don't have an account?")
-                    Button(action: {
-                        // Handle sign up action
-                    }) {
-                        Text("Sign Up")
-                            .foregroundColor(.blue)
-                    }
-                }
-            }
-            .padding()
-            .background(Color(UIColor.darkGray)) // Set the background color here
-            .fullScreenCover(isPresented: $isLoggedIn) {
-                MainTabViewController() // Navigate to MainTabViewController when isLoggedIn is true
+                                   Text("Don't have an account?")
+                                   // Use NavigationLink to navigate to the sign-up view
+                                   NavigationLink("", destination: SignUpViewController().navigationBarBackButtonHidden(true), isActive: $isSignUpViewPresented)
+                                   Button(action: {
+                                       // Set isSignUpViewPresented to true to present the sign-up view
+                                       isSignUpViewPresented = true
+                                   }) {
+                                       Text("Sign Up")
+                                           .foregroundColor(.blue)
+                                   }
+                               }
+                           }
+                           .padding()
+                           .background(Color(UIColor.darkGray)) // Set the background color here
+                           .fullScreenCover(isPresented: $isLoggedIn) {
+                               MainTabViewController() // Navigate to MainTabViewController when isLoggedIn is true
             }
         }
     }

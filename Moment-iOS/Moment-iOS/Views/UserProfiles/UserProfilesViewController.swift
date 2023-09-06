@@ -69,9 +69,6 @@ struct UserProfilesViewController: View {
     }
 }
 
-// Rest of the code remains the same...
-
-
 struct UserProfileContent: View {
     var user: UserProfileUser
     
@@ -187,11 +184,9 @@ struct UserProfileContent: View {
     }
 }
 
-
-
 struct UserProfilesViewController_Previews: PreviewProvider {
     static var previews: some View {
-        let user = UserProfileUser(name: "John Doe", bio: "bio", friendCount: 250, isPrivate: true, isFriend: false)
+        let user = UserProfileUser(name: "John Doe", bio: "bio", friendCount: 250, isPrivate: false, isFriend: true)
         let content = UserContent()
         return UserProfilesViewController(user: user, content: content)
     }
