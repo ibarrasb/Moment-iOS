@@ -7,17 +7,34 @@
 
 import SwiftUI
 
-struct FollowingContent: View {
-
-
-    var body: some View {
-        Text("Following Content Placeholder")
-            .font(.headline)
-            .foregroundColor(.white)
-    }
-}
-
 struct FeedViewController: View {
+    // Define your posts data here
+    var posts: [UserPost] = [UserPost(
+        username: "JohnDoe",
+        profilePicture: "photo",
+        photos: ["photo", "photo2"],
+        caption: "A great moment to remember!",
+        timePosted: "2 hours ago",
+        isLiked: false,
+        likes: 15,
+        comments: [
+            Comment(username: "JaneDoe", text: "Beautiful photo!"),
+            Comment(username: "Alice", text: "Nice caption!")
+        ]
+    ),
+    UserPost(
+        username: "JohnDoe",
+        profilePicture: "photo",
+        photos: ["photo"],
+        caption: "A great moment to remember!",
+        timePosted: "2 hours ago",
+        isLiked: false,
+        likes: 15,
+        comments: [
+            Comment(username: "JaneDoe", text: "Beautiful photo!"),
+            Comment(username: "Alice", text: "Nice caption!")
+        ]
+    )] // Replace this with your actual posts data
 
     var body: some View {
         NavigationView {
@@ -26,7 +43,6 @@ struct FeedViewController: View {
 
                 VStack(spacing: 0) {
                     HStack {
-                    
                         Text("Moment")
                             .font(Font.custom("Bodoni 72 Smallcaps", size: 50))
                             .foregroundColor(.white)
@@ -39,15 +55,14 @@ struct FeedViewController: View {
                                 Image(systemName: "magnifyingglass")
                                     .imageScale(.large)
                                     .foregroundColor(.white)
-                                
-                           
                             }
                         }
                         .padding(.trailing, 20)
                     }
-                    .padding(.top, -345)
+                    .padding(.top, 0)
 
-                    FollowingContent()
+                    // Pass the posts data to FollowingContent
+                    FollowingContent(posts: posts) // You can customize this view as needed
                 }
             }
         }

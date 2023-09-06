@@ -11,41 +11,36 @@ struct MainTabViewController: View {
     var body: some View {
         TabView(selection: $selectedIndex) {
             FeedViewController()
-                .onTapGesture {
-                    self.selectedIndex = 0
-                }
-                .tabItem{
+                .tabItem {
                     Image(systemName: "house")
-                }.tag(0)
+                }
+                .tag(0)
+
             EngagementViewController()
-                .onTapGesture {
-                    self.selectedIndex = 1
-                }
-                .tabItem{
+                .tabItem {
                     Image(systemName: "person.3.fill")
-                }.tag(1)
+                }
+                .tag(1)
+
             CreateViewController()
-                .onTapGesture {
-                    self.selectedIndex = 2
-                }
-                .tabItem{
+                .tabItem {
                     Image(systemName: "capsule.inset.filled")
-                }.tag(2)
+                }
+                .tag(2)
+
             MessagesViewController()
-                .onTapGesture {
-                    self.selectedIndex = 3
-                }
-                .tabItem{
+                .tabItem {
                     Image(systemName: "tray")
-                }.tag(3)
-            ProfileViewController()
-                .onTapGesture {
-                    self.selectedIndex = 3
                 }
-                .tabItem{
+                .tag(3)
+
+            ProfileViewController()
+                .tabItem {
                     Image(systemName: "person.fill")
-                }.tag(3)
+                }
+                .tag(4)
         }
+        .background(Color.gray) // Set your desired background color here
     }
 }
 

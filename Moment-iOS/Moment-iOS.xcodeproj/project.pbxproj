@@ -10,6 +10,7 @@
 		E9A90D5C2AA26757001D7B59 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A90D5B2AA26757001D7B59 /* CreateViewController.swift */; };
 		E9A90D5E2AA267DA001D7B59 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A90D5D2AA267DA001D7B59 /* SettingsViewController.swift */; };
 		E9A90D612AA28D67001D7B59 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A90D602AA28D67001D7B59 /* MessagesViewController.swift */; };
+		E9A90D652AA91058001D7B59 /* FollowingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A90D642AA91058001D7B59 /* FollowingContent.swift */; };
 		E9AA14632A9F19CA0012158B /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA14622A9F19CA0012158B /* MainTabViewController.swift */; };
 		E9AA14662A9F32180012158B /* EngagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA14652A9F32180012158B /* EngagementViewController.swift */; };
 		E9AF11CF2A98042300A8A1C4 /* Moment_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF11CE2A98042300A8A1C4 /* Moment_iOSApp.swift */; };
@@ -29,6 +30,7 @@
 		E9A90D5B2AA26757001D7B59 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		E9A90D5D2AA267DA001D7B59 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E9A90D602AA28D67001D7B59 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		E9A90D642AA91058001D7B59 /* FollowingContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingContent.swift; sourceTree = "<group>"; };
 		E9AA14622A9F19CA0012158B /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		E9AA14652A9F32180012158B /* EngagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngagementViewController.swift; sourceTree = "<group>"; };
 		E9AF11CB2A98042300A8A1C4 /* Moment-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moment-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				E9AF12022A9D654600A8A1C4 /* FeedViewController.swift */,
+				E9A90D642AA91058001D7B59 /* FollowingContent.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				E9AA14662A9F32180012158B /* EngagementViewController.swift in Sources */,
 				E9AA14632A9F19CA0012158B /* MainTabViewController.swift in Sources */,
 				E9AF11F62A992AC900A8A1C4 /* SignUpViewController.swift in Sources */,
+				E9A90D652AA91058001D7B59 /* FollowingContent.swift in Sources */,
 				E9A90D612AA28D67001D7B59 /* MessagesViewController.swift in Sources */,
 				E9A90D5C2AA26757001D7B59 /* CreateViewController.swift in Sources */,
 				E9AF11CF2A98042300A8A1C4 /* Moment_iOSApp.swift in Sources */,
