@@ -7,13 +7,15 @@
 
 import SwiftUI
 
+
+
 struct SettingsViewController: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
+  
     var body: some View {
         NavigationView {
             ZStack {
-                Color(UIColor.darkGray).edgesIgnoringSafeArea(.all)
+                Color(UIColor(.black)).edgesIgnoringSafeArea(.all)
                 
                 VStack {
                     HStack {
@@ -42,28 +44,28 @@ struct SettingsViewController: View {
                                 Text("Blocked Accounts")
                                     .foregroundColor(.white)
                             }
-                            .listRowBackground(Color.gray)
+                            .listRowBackground(Color(UIColor.darkGray))
                             
                             NavigationLink(destination: Text("Privacy")) {
                                 Text("Privacy")
                                     .foregroundColor(.white)
                             }
-                            .listRowBackground(Color.gray)
+                            .listRowBackground(Color(UIColor.darkGray))
                         }
                         
                         Section(header: Text("Support").foregroundColor(.white)) {
                             NavigationLink(destination: Text("Help & Support")) {
                                 Text("Help & Support")
                                     .foregroundColor(.white)
-                                    .listRowBackground(Color.gray)
+                                
                             }
-                            .listRowBackground(Color.gray)
+                            .listRowBackground(Color(UIColor.darkGray))
                             
                             NavigationLink(destination: Text("About")) {
                                 Text("About")
                                     .foregroundColor(.white)
                             }
-                            .listRowBackground(Color.gray)
+                            .listRowBackground(Color(UIColor.darkGray))
                             
                         }
                         
@@ -75,20 +77,22 @@ struct SettingsViewController: View {
                                     .foregroundColor(.red)
                             }
                         }
-                        .listRowBackground(Color.gray)
+                        .listRowBackground(Color(UIColor.darkGray))
                     }
-                    .background(Color(UIColor.darkGray))
+                    .background(Color.black.opacity(0.9))
                     .listStyle(.insetGrouped)
                     .scrollContentBackground(.hidden)
                 }
             }
-        
+           
         }
     }
-}
-
-struct SettingsViewController_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsViewController()
+ 
+    
+    
+    struct SettingsViewController_Previews: PreviewProvider {
+        static var previews: some View {
+            SettingsViewController()
+        }
     }
 }

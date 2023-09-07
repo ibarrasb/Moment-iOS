@@ -7,15 +7,18 @@ import SwiftUI
 
 struct MainTabViewController: View {
     @State private var selectedIndex = 0
-
+ 
     init() {
         // Set your desired background color here
-        UITabBar.appearance().barTintColor = UIColor.darkGray
+        UITabBar.appearance().barTintColor = UIColor.black.withAlphaComponent(0.9)
     }
+   
 
     var body: some View {
         NavigationView {
+    
             TabView(selection: $selectedIndex) {
+                
                 FeedViewController()
                     .tabItem {
                         Image(systemName: "house.fill")
@@ -58,6 +61,7 @@ struct MainTabViewController: View {
             }
             .navigationBarHidden(true) // Hide the navigation bar
             .accentColor(.white) // Set the selected tab color
+           
         }
     }
 }

@@ -37,7 +37,7 @@ struct SearchView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color(UIColor.darkGray).edgesIgnoringSafeArea(.all)
+                Color.black.opacity(0.8).edgesIgnoringSafeArea(.all)
                 
                 VStack {
                     HStack {

@@ -10,7 +10,7 @@ import SwiftUI
 struct CreateViewController: View {
     var body: some View {
         ZStack {
-            Color(UIColor.darkGray).edgesIgnoringSafeArea(.all)
+            Color.black.opacity(0.8).edgesIgnoringSafeArea(.all)
             VStack(spacing: 0) {
                 HStack {
                     Text("Moment")

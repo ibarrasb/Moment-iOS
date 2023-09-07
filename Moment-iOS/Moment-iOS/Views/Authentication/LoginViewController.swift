@@ -63,6 +63,7 @@ struct LoginView: View {
             
                 HStack {
                                    Text("Don't have an account?")
+                                        .foregroundColor(.white)
                                    // Use NavigationLink to navigate to the sign-up view
                                    NavigationLink("", destination: SignUpViewController().navigationBarBackButtonHidden(true), isActive: $isSignUpViewPresented)
                                    Button(action: {
@@ -75,7 +76,7 @@ struct LoginView: View {
                                }
                            }
                            .padding()
-                           .background(Color(UIColor.darkGray)) // Set the background color here
+                           .background(Color.black.opacity(0.8)) // Set the background color here
                            .fullScreenCover(isPresented: $isLoggedIn) {
                                MainTabViewController() // Navigate to MainTabViewController when isLoggedIn is true
             }

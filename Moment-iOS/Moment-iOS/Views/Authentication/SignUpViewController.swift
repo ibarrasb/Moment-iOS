@@ -86,7 +86,7 @@ struct SignUpViewController: View {
             }
         }
         .padding()
-        .background(Color(UIColor.darkGray)) // Set the background color here
+        .background(Color.black.opacity(0.8)) // Set the background color here
     }
 }
 

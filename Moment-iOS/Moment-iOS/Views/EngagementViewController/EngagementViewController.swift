@@ -40,7 +40,7 @@ struct EngagementViewController: View {
             Spacer()
         }
         .padding()
-        .background(Color(UIColor.darkGray))
+        .background(Color.black.opacity(0.8))
     }
 }
 
