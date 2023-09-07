@@ -143,7 +143,7 @@ struct ProfileContent: View {
             .padding(.bottom, 10)
 
             if selectedTab == .list {
-                Text("List View Content")
+                Text("Calendar View Content")
             } else {
                 Text("Calendar View Content")
             }

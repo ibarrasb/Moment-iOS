@@ -27,18 +27,34 @@ struct Comment: Identifiable {
 struct PostView: View {
     @Binding var post: UserPost // Use @Binding to make specific properties mutable
     @State private var selectedPhotoIndex: Int = 0
+    @State private var isLiked: Bool = false // New state to track like status
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack {
-                Image(systemName: post.profilePicture) // You can use an image here
+        VStack(spacing: 8) {
+            
+            HStack(alignment: .center) {
+                Image(systemName: post.profilePicture)
                     .resizable()
-                    .frame(width: 50, height: 50)
+                    .frame(width: 40, height: 40)
                     .clipShape(Circle())
                 
                 Text(post.username)
                     .font(.headline)
+                    .foregroundColor(.white)
+                
+                Spacer() // Pushes the content to the left
             }
+
+
+            
+            Text(post.caption)
+                .font(.body)
+                .foregroundColor(.white)
+            // Display time posted
+            Text(post.timePosted)
+                .font(.caption)
+                .foregroundColor(.gray)
+            
             
             // Display photos with a horizontal scroll view and paging
             ScrollView(.horizontal, showsIndicators: false) {
@@ -54,64 +70,51 @@ struct PostView: View {
                 .frame(width: UIScreen.main.bounds.width, alignment: .leading)
                 .offset(x: CGFloat(selectedPhotoIndex) * -UIScreen.main.bounds.width, y: 0)
             }
-            
-            // Arrow buttons for photo navigation (conditionally shown)
-            if post.photos.count > 1 {
-                HStack {
-                    Button(action: {
-                        if selectedPhotoIndex > 0 {
-                            selectedPhotoIndex -= 1
-                        }
-                    }) {
-                        Image(systemName: "chevron.left.circle.fill")
-                            .font(.largeTitle)
-                    }
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        if selectedPhotoIndex < post.photos.count - 1 {
-                            selectedPhotoIndex += 1
-                        }
-                    }) {
-                        Image(systemName: "chevron.right.circle.fill")
-                            .font(.largeTitle)
-                    }
-                }
-                .padding(.horizontal)
-            }
-            
-            Text(post.caption)
-                .font(.body)
-            
-            HStack {
+            HStack(spacing: 75){
+                // Heart button for liking
                 Button(action: {
-                    // Handle like button tap
+                    isLiked.toggle() // Toggle the like status
                 }) {
-                    Image(systemName: post.isLiked ? "heart.fill" : "heart")
+                    Image(systemName: isLiked ? "heart.fill" : "heart")
                         .imageScale(.large)
-                        .foregroundColor(post.isLiked ? .red : .black)
+                        .frame(width: 50, height: 50) // Adjust the button size
+                        .foregroundColor(isLiked ? Color.blue : Color.white) // Change color when liked
                 }
-                
-                Text("\(post.likes) Likes")
-                    .font(.footnote)
-            }
-            
-            // Display comments
-            VStack(alignment: .leading, spacing: 4) {
-                ForEach(post.comments) { comment in
-                    Text("\(comment.username): \(comment.text)")
-                        .font(.caption)
+                // Button to view comments
+                Button(action: {
+                    // Handle viewing comments here
+                }) {
+                    Image(systemName: "bubble.right")
+                        .imageScale(.large)
+                        .frame(width: 50, height: 50) // Adjust the button size
+                        .foregroundColor(Color.white)
+                }
+                // Button to view more options
+                Button(action: {
+                    // Handle viewing more options here
+                }) {
+                    Image(systemName: "ellipsis")
+                        .imageScale(.large)
+                        .frame(width: 50, height: 50) // Adjust the button size
+                        .foregroundColor(Color.white)
                 }
             }
-            
-            Text("Time Posted: \(post.timePosted)")
-                .font(.caption)
-                .foregroundColor(.gray)
+          
         }
+        .padding(.bottom, -30)
+        
+        
+
         .padding()
+        Divider()
+            .background(Color.gray) // Change the color
+            .frame(height: 2)       // Change the height (thickness) of the line
+
     }
+    
 }
+
+
 
 
 struct FeedView: View {
@@ -138,9 +141,9 @@ struct FollowingContent: View {
 struct FollowingContent_Previews: PreviewProvider {
     static var previews: some View {
         // Example posts
-        var posts = [
+        let posts = [
             UserPost(
-                username: "JohnDoe",
+                username: "Eddie Ibarra",
                 profilePicture: "photo",
                 photos: ["photo", "photo2"],
                 caption: "A great moment to remember!",

@@ -10,7 +10,7 @@ import SwiftUI
 struct FeedViewController: View {
     // Define your posts data here
     var posts: [UserPost] = [UserPost(
-        username: "JohnDoe",
+        username: "Eddie Ibarra",
         profilePicture: "photo",
         photos: ["photo", "photo2"],
         caption: "A great moment to remember!",
