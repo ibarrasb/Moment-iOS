@@ -15,7 +15,7 @@ struct MainTabViewController: View {
    
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
     
             TabView(selection: $selectedIndex) {
                 
