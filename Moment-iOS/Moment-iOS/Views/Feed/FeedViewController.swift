@@ -37,7 +37,7 @@ struct FeedViewController: View {
     )] // Replace this with your actual posts data
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 Color.black.opacity(0.8).edgesIgnoringSafeArea(.all)
 
@@ -61,11 +61,13 @@ struct FeedViewController: View {
                     }
                     .padding(.top, 0)
 
-                    // Pass the posts data to FollowingContent
-                    FollowingContent(posts: posts) // You can customize this view as needed
+                    FollowingContent(posts: posts)
                 }
+            
             }
+         
         }
+        
     }
 }
 
