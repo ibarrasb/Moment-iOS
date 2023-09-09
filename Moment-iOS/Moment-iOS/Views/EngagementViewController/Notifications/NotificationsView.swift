@@ -6,6 +6,25 @@
 //
 
 import SwiftUI
+// Helper function to calculate the time ago
+public func timeAgoSinceDate(_ date: Date) -> String {
+    let calendar = Calendar.current
+    let components = calendar.dateComponents([.second, .minute, .hour, .day, .weekOfYear], from: date, to: Date())
+    
+    if let week = components.weekOfYear, week >= 1 {
+        return "\(week)w ago"
+    } else if let day = components.day, day >= 1 {
+        return "\(day)d ago"
+    } else if let hour = components.hour, hour >= 1 {
+        return "\(hour)h ago"
+    } else if let minute = components.minute, minute >= 1 {
+        return "\(minute)m ago"
+    } else if let second = components.second, second >= 3 {
+        return "\(second)s ago"
+    } else {
+        return "Just now"
+    }
+}
 
 // Sample Notification Data Model
 struct NotificationItem {
@@ -52,25 +71,7 @@ struct NotificationsView: View {
         
     }
     
-    // Helper function to calculate the time ago
-    private func timeAgoSinceDate(_ date: Date) -> String {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.second, .minute, .hour, .day, .weekOfYear], from: date, to: Date())
-        
-        if let week = components.weekOfYear, week >= 1 {
-            return "\(week)w ago"
-        } else if let day = components.day, day >= 1 {
-            return "\(day)d ago"
-        } else if let hour = components.hour, hour >= 1 {
-            return "\(hour)h ago"
-        } else if let minute = components.minute, minute >= 1 {
-            return "\(minute)m ago"
-        } else if let second = components.second, second >= 3 {
-            return "\(second)s ago"
-        } else {
-            return "Just now"
-        }
-    }
+  
 }
 
 struct NotificationsView_Previews: PreviewProvider {

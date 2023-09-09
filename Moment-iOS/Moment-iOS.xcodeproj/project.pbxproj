@@ -58,6 +58,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E98E522C2AACD1E600B0CD0D /* ProfileListContent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProfileListContent;
+			sourceTree = "<group>";
+		};
+		E98E522D2AACD1FD00B0CD0D /* ProfileCalendarContent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProfileCalendarContent;
+			sourceTree = "<group>";
+		};
 		E9A90D5A2AA26738001D7B59 /* Create */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				E9AA14652A9F32180012158B /* EngagementViewController.swift */,
+				E9AF12042A9D68E500A8A1C4 /* Notifications */,
 			);
 			path = EngagementViewController;
 			sourceTree = "<group>";
@@ -152,7 +167,6 @@
 				E9AF12012A9D650000A8A1C4 /* Feed */,
 				E9A90D5F2AA28D42001D7B59 /* Messages */,
 				E9A90D5A2AA26738001D7B59 /* Create */,
-				E9AF12042A9D68E500A8A1C4 /* Notifications */,
 				E9AF12072A9D69AA00A8A1C4 /* Search */,
 				E9AA14612A9F19A70012158B /* MainTab */,
 			);
@@ -213,6 +227,8 @@
 			children = (
 				E9AF11F72A9C6B1A00A8A1C4 /* ProfileViewController.swift */,
 				E9A90D5D2AA267DA001D7B59 /* SettingsViewController.swift */,
+				E98E522D2AACD1FD00B0CD0D /* ProfileCalendarContent */,
+				E98E522C2AACD1E600B0CD0D /* ProfileListContent */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -485,8 +501,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -494,9 +509,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.EddieIbarra.Moment-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -514,8 +532,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -523,9 +540,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.EddieIbarra.Moment-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

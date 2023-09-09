@@ -12,7 +12,33 @@ struct User {
     let friendCount: Int
     let isPrivate: Bool
 }
-
+// Define your posts data here
+var posts: [UserPost] = [UserPost(
+    username: "Eddie Ibarra",
+    profilePicture: "photo",
+    photos: ["photo", "photo2"],
+    caption: "A great moment to remember!",
+    timePosted: Date(),
+    isLiked: false,
+    likes: 15,
+    comments: [
+        Comment(username: "JaneDoe", text: "Beautiful photo!"),
+        Comment(username: "Alice", text: "Nice caption!")
+    ]
+),
+UserPost(
+    username: "JohnDoe",
+    profilePicture: "photo",
+    photos: ["photo"],
+    caption: "A great moment to remember!",
+    timePosted: Date(),
+    isLiked: false,
+    likes: 15,
+    comments: [
+        Comment(username: "JaneDoe", text: "Beautiful photo!"),
+        Comment(username: "Alice", text: "Nice caption!")
+    ]
+)] // Replace this
 
 
 struct ProfileViewController: View {
@@ -39,7 +65,9 @@ struct ProfileViewController: View {
                                 
                         }
                         
+                        
                     }
+                    .padding(.bottom, -1)
                     
                     
                     // Move the user and ProfileContent here
@@ -55,7 +83,7 @@ struct ProfileViewController: View {
 
 struct ProfileContent: View {
     var user: User
-
+    
     @State private var selectedTab: Tab = .list
     
     
@@ -63,59 +91,60 @@ struct ProfileContent: View {
         case list
         case calendar
     }
-
+    
     var body: some View {
-        VStack {
-            Button(action: {
-                // Handle profile picture update
-            }) {
+        ScrollView{
+            VStack {
+                Button(action: {
+                    // Handle profile picture update
+                }) {
+                    
+                    Image("profile_picture")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 120, height: 120)
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.white, lineWidth: 3))
+                        .shadow(radius: 5)
+                }
+                .padding(.bottom, 10)
                 
-                Image("profile_picture")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 120, height: 120)
-                    .clipShape(Circle())
-                    .overlay(Circle().stroke(Color.white, lineWidth: 3))
-                    .shadow(radius: 5)
-            }
-            .padding(.bottom, 10)
-
-            if user.isPrivate {
-                Image(systemName: "lock")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 25, height: 25)
+                if user.isPrivate {
+                    Image(systemName: "lock")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 25, height: 25)
+                        .foregroundColor(.white)
+                        .padding(.bottom, 10)
+                } else {
+                    Image(systemName: "lock.open")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 25, height: 25)
+                        .foregroundColor(.white)
+                        .padding(.bottom, 10)
+                }
+                
+                Text(user.name)
+                    .font(.title)
+                    .fontWeight(.bold)
                     .foregroundColor(.white)
-                    .padding(.bottom, 10)
-            } else {
-                Image(systemName: "lock.open")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 25, height: 25)
-                    .foregroundColor(.white)
-                    .padding(.bottom, 10)
-            }
-
-            Text(user.name)
-                .font(.title)
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-
-            Text(user.bio)
-                .font(.headline)
-                .foregroundColor(Color(.white))
-                .padding(.bottom, 2)
-
-            Button(action: {
-                // Handle the action when the friends count is clicked
-            }) {
-                Text("\(user.friendCount) friends")
-                    .font(.subheadline)
-                    .foregroundColor(.blue)
-            }
-            .padding(.bottom, 10)
-       
-               
+                
+                Text(user.bio)
+                    .font(.headline)
+                    .foregroundColor(Color(.white))
+                    .padding(.bottom, 2)
+                
+                Button(action: {
+                    // Handle the action when the friends count is clicked
+                }) {
+                    Text("\(user.friendCount) friends")
+                        .font(.subheadline)
+                        .foregroundColor(.blue)
+                }
+                .padding(.bottom, 10)
+                
+                
                 Button(action: {
                     // Handle edit profile action
                 }) {
@@ -127,30 +156,32 @@ struct ProfileContent: View {
                         .background(Color.blue)
                         .cornerRadius(5)
                 }
-               
-     
-
-
-            HStack(spacing: 20) {
-                CustomTabButton(title: "List", isSelected: selectedTab == .list) {
-                    selectedTab = .list
+                
+                
+                
+                
+                HStack(spacing: 20) {
+                    CustomTabButton(title: "List", isSelected: selectedTab == .list) {
+                        selectedTab = .list
+                    }
+                    
+                    CustomTabButton(title: "Calendar", isSelected: selectedTab == .calendar) {
+                        selectedTab = .calendar
+                    }
                 }
-
-                CustomTabButton(title: "Calendar", isSelected: selectedTab == .calendar) {
-                    selectedTab = .calendar
+                .padding(.bottom, 10)
+                
+                if selectedTab == .list {
+                    FollowingContent(posts: posts)
+                } else {
+                    Text("Calendar View Content")
                 }
+                
+                Spacer()
             }
-            .padding(.bottom, 10)
-
-            if selectedTab == .list {
-                Text("Calendar View Content")
-            } else {
-                Text("Calendar View Content")
-            }
-
-            Spacer()
+            .padding(.horizontal)
+            .padding(.top, 10)
         }
-        .padding(.horizontal)
     }
 }
 
