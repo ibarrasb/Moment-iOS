@@ -14,7 +14,7 @@ struct FeedViewController: View {
         profilePicture: "photo",
         photos: ["photo", "photo2"],
         caption: "A great moment to remember!",
-        timePosted: "2 hours ago",
+        timePosted: Date(),
         isLiked: false,
         likes: 15,
         comments: [
@@ -27,7 +27,7 @@ struct FeedViewController: View {
         profilePicture: "photo",
         photos: ["photo"],
         caption: "A great moment to remember!",
-        timePosted: "2 hours ago",
+        timePosted: Date(),
         isLiked: false,
         likes: 15,
         comments: [

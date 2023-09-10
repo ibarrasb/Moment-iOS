@@ -6,7 +6,7 @@
 import SwiftUI
 
 struct MainTabViewController: View {
-    @State private var selectedIndex = 0
+    @State private var selectedIndex = 4
  
     init() {
           // Set your desired background color here

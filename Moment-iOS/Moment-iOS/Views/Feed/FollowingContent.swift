@@ -12,7 +12,7 @@ struct UserPost: Identifiable {
     var profilePicture: String
     var photos: [String]
     var caption: String
-    var timePosted: String
+    var timePosted: Date
     var isLiked: Bool
     var likes: Int
     var comments: [Comment]
@@ -51,7 +51,7 @@ struct PostView: View {
                 .font(.body)
                 .foregroundColor(.white)
             // Display time posted
-            Text(post.timePosted)
+            Text(timeAgoSinceDate(post.timePosted))
                 .font(.caption)
                 .foregroundColor(.gray)
             
@@ -147,7 +147,7 @@ struct FollowingContent_Previews: PreviewProvider {
                 profilePicture: "photo",
                 photos: ["photo", "photo2"],
                 caption: "A great moment to remember!",
-                timePosted: "2 hours ago",
+                timePosted: Date(),
                 isLiked: false,
                 likes: 15,
                 comments: [
@@ -160,7 +160,7 @@ struct FollowingContent_Previews: PreviewProvider {
                 profilePicture: "photo",
                 photos: ["photo"],
                 caption: "A great moment to remember!",
-                timePosted: "2 hours ago",
+                timePosted: Date(),
                 isLiked: false,
                 likes: 15,
                 comments: [
