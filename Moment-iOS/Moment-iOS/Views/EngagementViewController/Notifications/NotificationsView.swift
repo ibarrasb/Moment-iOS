@@ -41,7 +41,7 @@ struct NotificationsView: View {
         
         List(notifications, id: \.timestamp) { notification in
             HStack {
-                Image(systemName: "person.circle") // Placeholder for profile picture
+                Image("eddiepic") // Placeholder for profile picture
                     .resizable()
                     .frame(width: 40, height: 40)
                     .cornerRadius(20)

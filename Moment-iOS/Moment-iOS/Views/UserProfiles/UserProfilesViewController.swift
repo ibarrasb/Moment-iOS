@@ -33,7 +33,7 @@ struct UserProfilesViewController: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.black.opacity(0.8).edgesIgnoringSafeArea(.all)
+                Color.black.opacity(0.9).edgesIgnoringSafeArea(.all)
                 
                 VStack {
                     UserProfileContent(user: user)
@@ -186,7 +186,7 @@ struct UserProfileContent: View {
 
 struct UserProfilesViewController_Previews: PreviewProvider {
     static var previews: some View {
-        let user = UserProfileUser(name: "John Doe", bio: "bio", friendCount: 250, isPrivate: false, isFriend: true)
+        let user = UserProfileUser(name: "Susana Sainz", bio: "bio", friendCount: 250, isPrivate: false, isFriend: true)
         let content = UserContent()
         return UserProfilesViewController(user: user, content: content)
     }
