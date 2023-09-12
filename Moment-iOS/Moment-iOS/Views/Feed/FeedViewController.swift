@@ -13,7 +13,7 @@ struct FeedViewController: View {
         username: "Eddie Ibarra",
         profilePicture: "photo",
         photos: ["photo", "photo2"],
-        caption: "A great moment to remember!",
+        caption: "A great moment to remember",
         timePosted: Date(),
         isLiked: false,
         likes: 15,
