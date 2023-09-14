@@ -33,7 +33,7 @@ struct PostView: View {
         VStack(spacing: 8) {
             
             HStack(alignment: .center) {
-                Image(systemName: post.profilePicture)
+                Image(post.profilePicture)
                     .resizable()
                     .frame(width: 40, height: 40)
                     .clipShape(Circle())

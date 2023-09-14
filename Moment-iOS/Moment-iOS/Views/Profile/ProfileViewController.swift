@@ -15,7 +15,7 @@ struct User {
 // Define your posts data here
 var posts: [UserPost] = [UserPost(
     username: "Eddie Ibarra",
-    profilePicture: "photo",
+    profilePicture: "eddiepic",
     photos: ["photo", "photo2"],
     caption: "A great moment to remember!",
     timePosted: Date(),
@@ -28,7 +28,7 @@ var posts: [UserPost] = [UserPost(
 ),
 UserPost(
     username: "JohnDoe",
-    profilePicture: "photo",
+    profilePicture: "eddiepic",
     photos: ["photo"],
     caption: "A great moment to remember!",
     timePosted: Date(),
@@ -42,10 +42,11 @@ UserPost(
 
 
 struct ProfileViewController: View {
+
     var body: some View {
         NavigationView {
             ZStack {
-                Color.black.opacity(0.8).edgesIgnoringSafeArea(.all)
+                Color.black.opacity(0.9).edgesIgnoringSafeArea(.all)
                 
                 VStack {
                     HStack {
@@ -64,7 +65,6 @@ struct ProfileViewController: View {
                                 .padding(.trailing, 20)
                                 
                         }
-                        
                         
                     }
                     .padding(.bottom, -1)
@@ -90,6 +90,7 @@ struct ProfileContent: View {
     enum Tab {
         case list
         case calendar
+        case mentions
     }
     
     var body: some View {
@@ -99,7 +100,7 @@ struct ProfileContent: View {
                     // Handle profile picture update
                 }) {
                     
-                    Image("profile_picture")
+                    Image("eddiepic")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 120, height: 120)
@@ -168,13 +169,20 @@ struct ProfileContent: View {
                     CustomTabButton(title: "Calendar", isSelected: selectedTab == .calendar) {
                         selectedTab = .calendar
                     }
+                    CustomTabButton(title: "Mentions", isSelected: selectedTab == .mentions) {
+                        selectedTab = .mentions
+                    }
                 }
                 .padding(.bottom, 10)
+                .padding(.top, 15)
                 
                 if selectedTab == .list {
-                    FollowingContent(posts: posts)
-                } else {
+                    FollowingContent(posts: posts)}
+                 else if selectedTab == .calendar{
                     Text("Calendar View Content")
+                }
+                else {
+                    Text("Mentions")
                 }
                 
                 Spacer()

@@ -76,7 +76,7 @@ struct LoginView: View {
                                }
                            }
                            .padding()
-                           .background(Color.black.opacity(0.8)) // Set the background color here
+                           .background(Color.black.opacity(0.9)) // Set the background color here
                            .fullScreenCover(isPresented: $isLoggedIn) {
                                MainTabViewController() // Navigate to MainTabViewController when isLoggedIn is true
             }

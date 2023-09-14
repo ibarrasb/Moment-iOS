@@ -13,7 +13,7 @@ struct FeedViewController: View {
         username: "Eddie Ibarra",
         profilePicture: "photo",
         photos: ["photo", "photo2"],
-        caption: "A great moment to remember!",
+        caption: "A great moment to remember",
         timePosted: Date(),
         isLiked: false,
         likes: 15,
@@ -39,7 +39,7 @@ struct FeedViewController: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.black.opacity(0.8).edgesIgnoringSafeArea(.all)
+                Color.black.opacity(0.9).edgesIgnoringSafeArea(.all)
 
                 VStack(spacing: 0) {
                     HStack {

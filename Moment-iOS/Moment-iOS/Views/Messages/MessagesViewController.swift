@@ -10,7 +10,7 @@ import SwiftUI
 struct MessagesViewController: View {
     var body: some View {
         ZStack {
-            Color.black.opacity(0.8).edgesIgnoringSafeArea(.all)
+            Color.black.opacity(0.9).edgesIgnoringSafeArea(.all)
             Text("Messages")
         }
     }
