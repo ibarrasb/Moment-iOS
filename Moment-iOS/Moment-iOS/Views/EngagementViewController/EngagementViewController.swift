@@ -47,8 +47,6 @@ struct EngagementViewController: View {
     }
 }
 
-
-
 struct EngagementViewController_Previews: PreviewProvider {
     static var previews: some View {
         EngagementViewController()

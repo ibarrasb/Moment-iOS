@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E98E522F2AB2B9E900B0CD0D /* ProfileListContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98E522E2AB2B9E900B0CD0D /* ProfileListContent.swift */; };
+		E98E52322AB2C38C00B0CD0D /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98E52312AB2C38C00B0CD0D /* CommentsView.swift */; };
 		E9A90D5C2AA26757001D7B59 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A90D5B2AA26757001D7B59 /* CreateViewController.swift */; };
 		E9A90D5E2AA267DA001D7B59 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A90D5D2AA267DA001D7B59 /* SettingsViewController.swift */; };
 		E9A90D612AA28D67001D7B59 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A90D602AA28D67001D7B59 /* MessagesViewController.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E98E522E2AB2B9E900B0CD0D /* ProfileListContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListContent.swift; sourceTree = "<group>"; };
+		E98E52312AB2C38C00B0CD0D /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
 		E9A90D5B2AA26757001D7B59 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		E9A90D5D2AA267DA001D7B59 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E9A90D602AA28D67001D7B59 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 		E98E522C2AACD1E600B0CD0D /* ProfileListContent */ = {
 			isa = PBXGroup;
 			children = (
+				E98E522E2AB2B9E900B0CD0D /* ProfileListContent.swift */,
 			);
 			path = ProfileListContent;
 			sourceTree = "<group>";
@@ -70,6 +75,14 @@
 			children = (
 			);
 			path = ProfileCalendarContent;
+			sourceTree = "<group>";
+		};
+		E98E52302AB2C2FB00B0CD0D /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				E98E52312AB2C38C00B0CD0D /* CommentsView.swift */,
+			);
+			path = Comments;
 			sourceTree = "<group>";
 		};
 		E9A90D5A2AA26738001D7B59 /* Create */ = {
@@ -163,6 +176,7 @@
 				E9AF11F02A9909EB00A8A1C4 /* Authentication */,
 				E9AF11EF2A99082E00A8A1C4 /* Main */,
 				E9AF11EE2A99082300A8A1C4 /* Profile */,
+				E98E52302AB2C2FB00B0CD0D /* Comments */,
 				E9AF11FE2A9D5A7F00A8A1C4 /* UserProfiles */,
 				E9AF12012A9D650000A8A1C4 /* Feed */,
 				E9A90D5F2AA28D42001D7B59 /* Messages */,
@@ -354,6 +368,7 @@
 			files = (
 				E9AF11F22A991C9900A8A1C4 /* LoginViewController.swift in Sources */,
 				E9AF12092A9D69C200A8A1C4 /* SearchView.swift in Sources */,
+				E98E52322AB2C38C00B0CD0D /* CommentsView.swift in Sources */,
 				E9AF11D12A98042300A8A1C4 /* ContentView.swift in Sources */,
 				E9AF12002A9D5B5100A8A1C4 /* UserProfilesViewController.swift in Sources */,
 				E9AF11F82A9C6B1A00A8A1C4 /* ProfileViewController.swift in Sources */,
@@ -363,6 +378,7 @@
 				E9A90D652AA91058001D7B59 /* FollowingContent.swift in Sources */,
 				E9A90D612AA28D67001D7B59 /* MessagesViewController.swift in Sources */,
 				E9A90D5C2AA26757001D7B59 /* CreateViewController.swift in Sources */,
+				E98E522F2AB2B9E900B0CD0D /* ProfileListContent.swift in Sources */,
 				E9AF11CF2A98042300A8A1C4 /* Moment_iOSApp.swift in Sources */,
 				E9A90D5E2AA267DA001D7B59 /* SettingsViewController.swift in Sources */,
 				E9AF12032A9D654600A8A1C4 /* FeedViewController.swift in Sources */,

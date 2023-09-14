@@ -55,7 +55,6 @@ struct NotificationsView: View {
                         .foregroundColor(.white)
                 }
                 
-                
                 Spacer()
                 
                 Text(timeAgoSinceDate(notification.timestamp))
@@ -68,10 +67,7 @@ struct NotificationsView: View {
         
         }
         .listStyle(PlainListStyle())
-        
     }
-    
-  
 }
 
 struct NotificationsView_Previews: PreviewProvider {
