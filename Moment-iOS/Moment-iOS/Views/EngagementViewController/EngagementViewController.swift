@@ -16,8 +16,8 @@ struct EngagementViewController: View {
     
     // Sample notification data
     let notifications: [NotificationItem] = [
-        NotificationItem(fullName: "John Doe", profilePicture: "profile_url", actionText: "liked your photo", timestamp: Date()),
-        NotificationItem(fullName: "Alice Smith", profilePicture: "profile_url", actionText: "commented on your post", timestamp: Date()),
+        NotificationItem(fullName: "John Doe", profilePicture: "profile_url", actionText: "liked your Moment", timestamp: Date()),
+        NotificationItem(fullName: "Alice Smith", profilePicture: "profile_url", actionText: "commented on your Moment", timestamp: Date()),
     ]
     
     var body: some View {
@@ -43,11 +43,9 @@ struct EngagementViewController: View {
             Spacer()
         }
         .padding()
-        .background(Color.black.opacity(0.8))
+        .background(Color.black.opacity(0.9))
     }
 }
-
-
 
 struct EngagementViewController_Previews: PreviewProvider {
     static var previews: some View {

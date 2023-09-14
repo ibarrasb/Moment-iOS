@@ -41,7 +41,7 @@ struct NotificationsView: View {
         
         List(notifications, id: \.timestamp) { notification in
             HStack {
-                Image(systemName: "person.circle") // Placeholder for profile picture
+                Image("eddiepic") // Placeholder for profile picture
                     .resizable()
                     .frame(width: 40, height: 40)
                     .cornerRadius(20)
@@ -55,7 +55,6 @@ struct NotificationsView: View {
                         .foregroundColor(.white)
                 }
                 
-                
                 Spacer()
                 
                 Text(timeAgoSinceDate(notification.timestamp))
@@ -68,10 +67,7 @@ struct NotificationsView: View {
         
         }
         .listStyle(PlainListStyle())
-        
     }
-    
-  
 }
 
 struct NotificationsView_Previews: PreviewProvider {

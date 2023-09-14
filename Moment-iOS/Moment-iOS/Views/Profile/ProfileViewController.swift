@@ -13,72 +13,75 @@ struct User {
     let isPrivate: Bool
 }
 // Define your posts data here
-var posts: [UserPost] = [UserPost(
+var posts: [ProfileUserPost] = [
+    ProfileUserPost(
     username: "Eddie Ibarra",
-    profilePicture: "photo",
-    photos: ["photo", "photo2"],
-    caption: "A great moment to remember!",
+    profilePicture: "eddiepic",
+    photos: ["eddiepic"],
+    caption: "NYC📍",
     timePosted: Date(),
     isLiked: false,
+    isCoreMoment: false,
     likes: 15,
     comments: [
-        Comment(username: "JaneDoe", text: "Beautiful photo!"),
-        Comment(username: "Alice", text: "Nice caption!")
+        ProfileComment(username: "JaneDoe", text: "Beautiful!"),
+        ProfileComment(username: "Alice", text: "Nice caption!")
     ]
 ),
-UserPost(
-    username: "JohnDoe",
-    profilePicture: "photo",
+    ProfileUserPost(
+    username: "Eddie Ibarra",
+    profilePicture: "eddiepic",
     photos: ["photo"],
     caption: "A great moment to remember!",
     timePosted: Date(),
     isLiked: false,
+    isCoreMoment: false,
     likes: 15,
     comments: [
-        Comment(username: "JaneDoe", text: "Beautiful photo!"),
-        Comment(username: "Alice", text: "Nice caption!")
+        ProfileComment(username: "JaneDoe", text: "Beautiful photo!"),
+        ProfileComment(username: "Alice", text: "Nice caption!")
     ]
-)] // Replace this
-
+)]
 
 struct ProfileViewController: View {
     var body: some View {
         NavigationView {
-            ZStack {
-                Color.black.opacity(0.8).edgesIgnoringSafeArea(.all)
-                
-                VStack {
-                    HStack {
-                        Text("Moment")
-                            .font(Font.custom("Bodoni 72 Smallcaps", size: 50))
-                            .foregroundColor(.white)
-                            .padding(.leading, 20)
-                        Spacer()
-                        
-                        NavigationLink(destination: SettingsViewController().navigationBarBackButtonHidden(true)) {
-                            Image(systemName: "gear")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 25, height: 25)
+            
+            //used to keep top header in a fixed place
+            GeometryReader { geometry in
+                ZStack {
+                    Color.black.opacity(0.9)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    VStack {
+                        HStack {
+                            Text("Moment")
+                                .font(Font.custom("Bodoni 72 Smallcaps", size: 50))
                                 .foregroundColor(.white)
-                                .padding(.trailing, 20)
-                                
+                                .padding(.leading, 20)
+                            Spacer()
+                            
+                            NavigationLink(destination: SettingsViewController().navigationBarBackButtonHidden(true)) {
+                                Image(systemName: "gear")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 25, height: 25)
+                                    .foregroundColor(.white)
+                                    .padding(.trailing, 20)
+                            }
                         }
+                        .padding(.bottom, -1)
                         
-                        
+                        // Move the user and ProfileContent here
+                        let user = User(name: "Eddie Ibarra", bio: "Dallas // ", friendCount: 200, isPrivate: false)
+                        ProfileContent(user: user)
                     }
-                    .padding(.bottom, -1)
-                    
-                    
-                    // Move the user and ProfileContent here
-                    let user = User(name: "Eddie Ibarra", bio: "Dallas // ", friendCount: 200, isPrivate: false)
-                    ProfileContent(user: user)
+                    .frame(width: geometry.size.width, height: geometry.size.height)
                 }
             }
         }
-        
     }
-    
 }
 
 struct ProfileContent: View {
@@ -86,10 +89,10 @@ struct ProfileContent: View {
     
     @State private var selectedTab: Tab = .list
     
-    
     enum Tab {
         case list
         case calendar
+        case mentions
     }
     
     var body: some View {
@@ -99,7 +102,7 @@ struct ProfileContent: View {
                     // Handle profile picture update
                 }) {
                     
-                    Image("profile_picture")
+                    Image("eddiepic")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 120, height: 120)
@@ -157,9 +160,6 @@ struct ProfileContent: View {
                         .cornerRadius(5)
                 }
                 
-                
-                
-                
                 HStack(spacing: 20) {
                     CustomTabButton(title: "List", isSelected: selectedTab == .list) {
                         selectedTab = .list
@@ -168,13 +168,20 @@ struct ProfileContent: View {
                     CustomTabButton(title: "Calendar", isSelected: selectedTab == .calendar) {
                         selectedTab = .calendar
                     }
+                    CustomTabButton(title: "Mentions", isSelected: selectedTab == .mentions) {
+                        selectedTab = .mentions
+                    }
                 }
                 .padding(.bottom, 10)
+                .padding(.top, 15)
                 
                 if selectedTab == .list {
-                    FollowingContent(posts: posts)
-                } else {
+                    ProfileListContent(posts: posts)}
+                 else if selectedTab == .calendar{
                     Text("Calendar View Content")
+                }
+                else {
+                    Text("Mentions")
                 }
                 
                 Spacer()
