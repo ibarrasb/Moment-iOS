@@ -22,7 +22,7 @@ var posts: [ProfileUserPost] = [
     timePosted: Date(),
     isLiked: false,
     isCoreMoment: false,
-    likes: 15,
+    likes: 101,
     comments: [
         ProfileComment(username: "JaneDoe", text: "Beautiful!"),
         ProfileComment(username: "Alice", text: "Nice caption!")

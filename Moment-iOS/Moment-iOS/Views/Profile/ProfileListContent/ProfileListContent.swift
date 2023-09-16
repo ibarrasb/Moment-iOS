@@ -13,7 +13,7 @@ struct ProfileUserPost: Identifiable {
     var photos: [String]
     var caption: String
     var timePosted: Date
-    var isLiked: Bool
+    var isLiked: Bool // possibly remove this (not needed)
     var isCoreMoment: Bool
     var likes: Int
     var comments: [ProfileComment]
@@ -28,9 +28,16 @@ struct ProfileComment: Identifiable {
 struct ProfilePostView: View {
     @Binding var post: ProfileUserPost // Use @Binding to make specific properties mutable
     @State private var selectedPhotoIndex: Int = 0
-    @State private var isLiked: Bool = false // New state to track like status
+    @State public var likes: Int
     @State private var isCoreMoment: Bool = false
     
+    var likesText: String {
+        if likes > 100 {
+            return "100+"
+        } else {
+            return "\(likes)"
+        }
+    }
     var body: some View {
         VStack(spacing: 8) {
             
@@ -73,14 +80,21 @@ struct ProfilePostView: View {
             HStack(spacing: 50){
                 // Heart button for liking
                 Button(action: {
-                    isLiked.toggle() // Toggle the like status
+                           // Simulating fetching like count from a JSON object
+                           // Replace this with your JSON parsing logic
+                        
                 }) {
-                    Image(systemName: isLiked ? "heart.fill" : "heart")
-                        .imageScale(.large)
-                        .frame(width: 50, height: 50) // Adjust the button size
-                        .foregroundColor(isLiked ? Color.blue : Color.white) // Change color when liked
+                    ZStack {
+                        Image(systemName: "heart.fill")
+                            .scaleEffect(2.0) // Increase the scale factor (adjust the value as needed)
+                                .frame(width: 50, height: 50) // Adjust the button size
+                                .foregroundColor(Color.blue) // Set the heart color to blue
+                        
+                        Text("\(likesText)")
+                            .font(.system(size: 18, weight: .bold))
+                            .foregroundColor(.white)
+                    }
                 }
-                
                 // Button to view comments
                     NavigationLink(destination: CommentsView(comments: post.comments).navigationBarBackButtonHidden(true))
                {
@@ -122,23 +136,24 @@ struct ProfilePostView: View {
 }
 
 struct ProfileFeedView: View {
-    @Binding var posts: [ProfileUserPost] // Use @Binding to make the entire array mutable
+    @Binding var posts: [ProfileUserPost]
 
     var body: some View {
         ScrollView {
             ForEach(posts.indices, id: \.self) { index in
-                ProfilePostView(post: $posts[index]) // Pass a binding to the post
+                ProfilePostView(post: $posts[index], likes: posts[index].likes) // Pass likes as a regular Int
                     .padding(.bottom, 20)
             }
         }
     }
 }
 
+
 struct ProfileListContent: View {
-    @State var posts: [ProfileUserPost] // Define @State variable for posts
+    @State var posts: [ProfileUserPost]
 
     var body: some View {
-        ProfileFeedView(posts: $posts) // Pass a binding to the posts
+        ProfileFeedView(posts: $posts)
     }
 }
 
