@@ -15,8 +15,14 @@ struct ProfileUserPost: Identifiable {
     var timePosted: Date
     var isLiked: Bool // possibly remove this (not needed)
     var isCoreMoment: Bool
-    var likes: Int
+    var likes: [postLikedBy]
     var comments: [ProfileComment]
+}
+struct postLikedBy: Identifiable {
+    let id = UUID()
+    var username: String
+    var profilePicture: String
+  
 }
 
 struct ProfileComment: Identifiable {
@@ -28,16 +34,9 @@ struct ProfileComment: Identifiable {
 struct ProfilePostView: View {
     @Binding var post: ProfileUserPost // Use @Binding to make specific properties mutable
     @State private var selectedPhotoIndex: Int = 0
-    @State public var likes: Int
     @State private var isCoreMoment: Bool = false
     
-    var likesText: String {
-        if likes > 100 {
-            return "100+"
-        } else {
-            return "\(likes)"
-        }
-    }
+   
     var body: some View {
         VStack(spacing: 8) {
             
@@ -78,23 +77,26 @@ struct ProfilePostView: View {
                 .offset(x: CGFloat(selectedPhotoIndex) * -UIScreen.main.bounds.width, y: 0)
             }
             HStack(spacing: 50){
+                
+                
+                
+                
+                
+                
                 // Heart button for liking
-                Button(action: {
-                           // Simulating fetching like count from a JSON object
-                           // Replace this with your JSON parsing logic
-                        
-                }) {
-                    ZStack {
-                        Image(systemName: "heart.fill")
-                            .scaleEffect(2.0) // Increase the scale factor (adjust the value as needed)
-                                .frame(width: 50, height: 50) // Adjust the button size
-                                .foregroundColor(Color.blue) // Set the heart color to blue
-                        
-                        Text("\(likesText)")
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(.white)
-                    }
+
+                    NavigationLink(destination: LikedByView(likedBy: post.likes).navigationBarBackButtonHidden(true))
+               {
+                   Image(systemName: "heart.fill")
+                       .scaleEffect(2.0) // Increase the scale factor (adjust the value as needed)
+                           .frame(width: 50, height: 50) // Adjust the button size
+                           .foregroundColor(Color.blue) // Set the heart color to blue
+                 
                 }
+                
+                
+                
+                
                 // Button to view comments
                     NavigationLink(destination: CommentsView(comments: post.comments).navigationBarBackButtonHidden(true))
                {
@@ -141,7 +143,7 @@ struct ProfileFeedView: View {
     var body: some View {
         ScrollView {
             ForEach(posts.indices, id: \.self) { index in
-                ProfilePostView(post: $posts[index], likes: posts[index].likes) // Pass likes as a regular Int
+                ProfilePostView(post: $posts[index]) // Pass likes as a regular Int
                     .padding(.bottom, 20)
             }
         }
@@ -169,7 +171,10 @@ struct ProfileListContent_Previews: PreviewProvider {
                 timePosted: Date(),
                 isLiked: false,
                 isCoreMoment: false,
-                likes: 15,
+                likes: [
+                    postLikedBy(username: "JaneDoe", profilePicture: "Beautiful photo!"),
+                    postLikedBy(username: "Alice", profilePicture: "Nice caption!")
+                ],
                 comments: [
                     ProfileComment(username: "JaneDoe", text: "Beautiful photo!"),
                     ProfileComment(username: "Alice", text: "Nice caption!")
@@ -183,7 +188,9 @@ struct ProfileListContent_Previews: PreviewProvider {
                 timePosted: Date(),
                 isLiked: false,
                 isCoreMoment: false,
-                likes: 15,
+                likes: [ postLikedBy(username: "JaneDoe", profilePicture: "Beautiful photo!"),
+                         postLikedBy(username: "Alice", profilePicture: "Nice caption!")
+                ],
                 comments: [
                     ProfileComment(username: "JaneDoe", text: "Beautiful photo!"),
                     ProfileComment(username: "Alice", text: "Nice caption!")

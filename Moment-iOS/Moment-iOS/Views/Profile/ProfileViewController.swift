@@ -22,7 +22,11 @@ var posts: [ProfileUserPost] = [
     timePosted: Date(),
     isLiked: false,
     isCoreMoment: false,
-    likes: 101,
+    likes: [
+        postLikedBy(username: "JaneDoe", profilePicture: "Beautiful photo!"),
+        postLikedBy(username: "Alice", profilePicture: "Nice caption!")
+    ]
+    ,
     comments: [
         ProfileComment(username: "JaneDoe", text: "Beautiful!"),
         ProfileComment(username: "Alice", text: "Nice caption!")
@@ -36,7 +40,10 @@ var posts: [ProfileUserPost] = [
     timePosted: Date(),
     isLiked: false,
     isCoreMoment: false,
-    likes: 15,
+    likes: [
+        postLikedBy(username: "JaneDoe", profilePicture: "Beautiful photo!"),
+        postLikedBy(username: "Alice", profilePicture: "Nice caption!")
+    ],
     comments: [
         ProfileComment(username: "JaneDoe", text: "Beautiful photo!"),
         ProfileComment(username: "Alice", text: "Nice caption!")

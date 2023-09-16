@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct SettingsViewController: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
   
