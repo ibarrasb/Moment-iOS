@@ -15,14 +15,10 @@ struct UserPost: Identifiable {
     var timePosted: Date
     var isLiked: Bool
     var likes: Int
-    var comments: [Comment]
+    var comments: [ProfileComment]
 }
 
-struct Comment: Identifiable {
-    let id = UUID()
-    var username: String
-    var text: String
-}
+
 
 struct PostView: View {
     @Binding var post: UserPost // Use @Binding to make specific properties mutable
@@ -81,14 +77,13 @@ struct PostView: View {
                         .foregroundColor(isLiked ? Color.blue : Color.white) // Change color when liked
                 }
                 // Button to view comments
-                Button(action: {
-                    // Handle viewing comments here
-                }) {
-                    Image(systemName: "bubble.right")
-                        .imageScale(.large)
-                        .frame(width: 50, height: 50) // Adjust the button size
-                        .foregroundColor(Color.white)
-                }
+                NavigationLink(destination: CommentsView(comments: post.comments).navigationBarBackButtonHidden(true))
+           {
+                Image(systemName: "bubble.right")
+                    .imageScale(.large)
+                    .frame(width: 50, height: 50) // Adjust the button size
+                    .foregroundColor(Color.white)
+            }
                 // Button to view more options
                 Button(action: {
                     // Handle viewing more options here
@@ -151,8 +146,8 @@ struct FollowingContent_Previews: PreviewProvider {
                 isLiked: false,
                 likes: 15,
                 comments: [
-                    Comment(username: "JaneDoe", text: "Beautiful photo!"),
-                    Comment(username: "Alice", text: "Nice caption!")
+                    ProfileComment(profilePicture: "eddiepic",username: "JaneDoe", text: "Beautiful photo!"),
+                    ProfileComment(profilePicture: "eddiepic",username: "Alice", text: "Nice caption!")
                 ]
             ),
             UserPost(
@@ -164,8 +159,8 @@ struct FollowingContent_Previews: PreviewProvider {
                 isLiked: false,
                 likes: 15,
                 comments: [
-                    Comment(username: "JaneDoe", text: "Beautiful photo!"),
-                    Comment(username: "Alice", text: "Nice caption!")
+                    ProfileComment(profilePicture: "eddiepic",username: "JaneDoe", text: "Beautiful photo!"),
+                    ProfileComment(profilePicture: "eddiepic",username: "Alice", text: "Nice caption!")
                 ]
             )
             // Add more posts here...

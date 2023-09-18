@@ -18,8 +18,8 @@ struct FeedViewController: View {
         isLiked: false,
         likes: 15,
         comments: [
-            Comment(username: "JaneDoe", text: "Beautiful photo!"),
-            Comment(username: "Alice", text: "Nice caption!")
+            ProfileComment(profilePicture: "eddiepic",username: "JaneDoe", text: "Beautiful photo!"),
+            ProfileComment(profilePicture: "eddiepic",username: "Alice", text: "Nice caption dude!")
         ]
     ),
     UserPost(
@@ -31,8 +31,8 @@ struct FeedViewController: View {
         isLiked: false,
         likes: 15,
         comments: [
-            Comment(username: "JaneDoe", text: "Beautiful photo!"),
-            Comment(username: "Alice", text: "Nice caption!")
+            ProfileComment(profilePicture: "eddiepic",username: "JaneDoe", text: "Beautiful photo!"),
+            ProfileComment(profilePicture: "eddiepic",username: "Alice", text: "Nice caption!")
         ]
     )] // Replace this with your actual posts data
 

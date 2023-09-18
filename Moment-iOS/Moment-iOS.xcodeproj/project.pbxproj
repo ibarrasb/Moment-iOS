@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9323C2B2AB63A0D00F2AA37 /* LikedByView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9323C2A2AB63A0D00F2AA37 /* LikedByView.swift */; };
 		E98E522F2AB2B9E900B0CD0D /* ProfileListContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98E522E2AB2B9E900B0CD0D /* ProfileListContent.swift */; };
 		E98E52322AB2C38C00B0CD0D /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98E52312AB2C38C00B0CD0D /* CommentsView.swift */; };
 		E9A90D5C2AA26757001D7B59 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A90D5B2AA26757001D7B59 /* CreateViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E9323C2A2AB63A0D00F2AA37 /* LikedByView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedByView.swift; sourceTree = "<group>"; };
 		E98E522E2AB2B9E900B0CD0D /* ProfileListContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListContent.swift; sourceTree = "<group>"; };
 		E98E52312AB2C38C00B0CD0D /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
 		E9A90D5B2AA26757001D7B59 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E9323C282AB639D500F2AA37 /* PostDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E9323C292AB639E800F2AA37 /* Likes */,
+				E98E52302AB2C2FB00B0CD0D /* Comments */,
+			);
+			path = PostDetails;
+			sourceTree = "<group>";
+		};
+		E9323C292AB639E800F2AA37 /* Likes */ = {
+			isa = PBXGroup;
+			children = (
+				E9323C2A2AB63A0D00F2AA37 /* LikedByView.swift */,
+			);
+			path = Likes;
+			sourceTree = "<group>";
+		};
 		E98E522C2AACD1E600B0CD0D /* ProfileListContent */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				E9AF11E02A9870E500A8A1C4 /* Models */,
+				E9AF11EF2A99082E00A8A1C4 /* Main */,
 				E9AF11DF2A9870E200A8A1C4 /* Views */,
 				E9AF11DE2A9870D500A8A1C4 /* ViewModels */,
 				E9AF11E82A99076900A8A1C4 /* Services */,
@@ -174,15 +194,14 @@
 			children = (
 				E9AA14642A9F31A40012158B /* EngagementViewController */,
 				E9AF11F02A9909EB00A8A1C4 /* Authentication */,
-				E9AF11EF2A99082E00A8A1C4 /* Main */,
 				E9AF11EE2A99082300A8A1C4 /* Profile */,
-				E98E52302AB2C2FB00B0CD0D /* Comments */,
 				E9AF11FE2A9D5A7F00A8A1C4 /* UserProfiles */,
 				E9AF12012A9D650000A8A1C4 /* Feed */,
 				E9A90D5F2AA28D42001D7B59 /* Messages */,
 				E9A90D5A2AA26738001D7B59 /* Create */,
-				E9AF12072A9D69AA00A8A1C4 /* Search */,
 				E9AA14612A9F19A70012158B /* MainTab */,
+				E9AF12072A9D69AA00A8A1C4 /* Search */,
+				E9323C282AB639D500F2AA37 /* PostDetails */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,7 +270,8 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = Main;
+			name = Main;
+			path = Views/Main;
 			sourceTree = "<group>";
 		};
 		E9AF11F02A9909EB00A8A1C4 /* Authentication */ = {
@@ -367,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9AF11F22A991C9900A8A1C4 /* LoginViewController.swift in Sources */,
+				E9323C2B2AB63A0D00F2AA37 /* LikedByView.swift in Sources */,
 				E9AF12092A9D69C200A8A1C4 /* SearchView.swift in Sources */,
 				E98E52322AB2C38C00B0CD0D /* CommentsView.swift in Sources */,
 				E9AF11D12A98042300A8A1C4 /* ContentView.swift in Sources */,
