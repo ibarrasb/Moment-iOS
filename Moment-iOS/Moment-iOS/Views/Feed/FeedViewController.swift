@@ -37,7 +37,7 @@ struct FeedViewController: View {
     )] // Replace this with your actual posts data
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ZStack {
                 Color.black.opacity(0.9).edgesIgnoringSafeArea(.all)
 
