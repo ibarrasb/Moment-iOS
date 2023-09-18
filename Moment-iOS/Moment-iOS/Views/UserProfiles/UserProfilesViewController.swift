@@ -132,27 +132,41 @@ struct UserProfileContent: View {
             .padding(.bottom, 10)
             
             if user.isFriend {
-                HStack{
-                    Button(action: {
-                        // Handle manage friendship action
-                    }) {
-                        Text("Manage Friendship")
-                            .font(.subheadline)
-                            .foregroundColor(.white)
-                            .padding(.vertical, 10)
-                            .padding(.horizontal, 10)
-                            .background(Color.gray.opacity(0.5))
-                            .cornerRadius(5)
+                
+                VStack{
+                    HStack{
+                        Button(action: {
+                            // Handle manage friendship action
+                        }) {
+                            Text("Manage Friendship")
+                                .font(.subheadline)
+                                .foregroundColor(.white)
+                                .padding(.vertical, 10)
+                                .padding(.horizontal, 10)
+                                .background(Color.gray.opacity(0.5))
+                                .cornerRadius(5)
+                        }
+                        Button(action: {
+                            // Handle manage friendship action
+                        }) {
+                            Text("Message")
+                                .font(.subheadline)
+                                .foregroundColor(.white)
+                                .padding(.vertical, 10)
+                                .padding(.horizontal, 40)
+                                .background(Color.gray.opacity(0.5))
+                                .cornerRadius(5)
+                        }
                     }
                     Button(action: {
                         // Handle manage friendship action
                     }) {
-                        Text("Message")
+                        Text("Time Capsule")
                             .font(.subheadline)
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                             .padding(.vertical, 10)
-                            .padding(.horizontal, 40)
-                            .background(Color.gray.opacity(0.5))
+                            .padding(.horizontal, 105)
+                            .background(Color.yellow)
                             .cornerRadius(5)
                     }
                 }
@@ -186,7 +200,7 @@ struct UserProfileContent: View {
 
 struct UserProfilesViewController_Previews: PreviewProvider {
     static var previews: some View {
-        let user = UserProfileUser(name: "Susana Sainz", bio: "bio", friendCount: 250, isPrivate: false, isFriend: false)
+        let user = UserProfileUser(name: "Susana Sainz", bio: "bio", friendCount: 250, isPrivate: false, isFriend: true)
         let content = UserContent()
         return UserProfilesViewController(user: user, content: content)
     }
