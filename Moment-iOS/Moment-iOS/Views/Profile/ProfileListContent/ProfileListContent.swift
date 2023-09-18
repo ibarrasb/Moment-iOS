@@ -18,18 +18,8 @@ struct ProfileUserPost: Identifiable {
     var likes: [postLikedBy]
     var comments: [ProfileComment]
 }
-struct postLikedBy: Identifiable {
-    let id = UUID()
-    var username: String
-    var profilePicture: String
-  
-}
 
-struct ProfileComment: Identifiable {
-    let id = UUID()
-    var username: String
-    var text: String
-}
+
 
 struct ProfilePostView: View {
     @Binding var post: ProfileUserPost // Use @Binding to make specific properties mutable
@@ -172,12 +162,12 @@ struct ProfileListContent_Previews: PreviewProvider {
                 isLiked: false,
                 isCoreMoment: false,
                 likes: [
-                    postLikedBy(username: "JaneDoe", profilePicture: "Beautiful photo!"),
-                    postLikedBy(username: "Alice", profilePicture: "Nice caption!")
+                    postLikedBy(username: "JaneDoe", profilePicture: "eddiepic", isFriend: true),
+                    postLikedBy(username: "Alice", profilePicture: "eddiepic", isFriend: true)
                 ],
                 comments: [
-                    ProfileComment(username: "JaneDoe", text: "Beautiful photo!"),
-                    ProfileComment(username: "Alice", text: "Nice caption!")
+                    ProfileComment(profilePicture: "eddiepic",username: "JaneDoe", text: "Beautiful photo!"),
+                    ProfileComment(profilePicture: "eddiepic",username: "Alice", text: "Nice caption!")
                 ]
             ),
             ProfileUserPost(
@@ -188,12 +178,12 @@ struct ProfileListContent_Previews: PreviewProvider {
                 timePosted: Date(),
                 isLiked: false,
                 isCoreMoment: false,
-                likes: [ postLikedBy(username: "JaneDoe", profilePicture: "Beautiful photo!"),
-                         postLikedBy(username: "Alice", profilePicture: "Nice caption!")
+                likes: [ postLikedBy(username: "JaneDoe", profilePicture: "eddiepic", isFriend: true),
+                         postLikedBy(username: "Alice", profilePicture: "eddiepic", isFriend: true)
                 ],
                 comments: [
-                    ProfileComment(username: "JaneDoe", text: "Beautiful photo!"),
-                    ProfileComment(username: "Alice", text: "Nice caption!")
+                    ProfileComment(profilePicture: "eddiepic",username: "JaneDoe", text: "Beautiful photo!"),
+                    ProfileComment(profilePicture: "eddiepic",username: "Alice", text: "Nice caption!")
                 ]
             )
             // Add more posts here...

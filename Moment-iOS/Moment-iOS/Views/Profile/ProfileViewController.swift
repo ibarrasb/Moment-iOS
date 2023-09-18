@@ -23,13 +23,13 @@ var posts: [ProfileUserPost] = [
     isLiked: false,
     isCoreMoment: false,
     likes: [
-        postLikedBy(username: "JaneDoe", profilePicture: "Beautiful photo!"),
-        postLikedBy(username: "Alice", profilePicture: "Nice caption!")
+        postLikedBy(username: "JaneDoe", profilePicture: "eddiepic", isFriend: true),
+        postLikedBy(username: "Alice", profilePicture: "eddiepic", isFriend: true)
     ]
     ,
     comments: [
-        ProfileComment(username: "JaneDoe", text: "Beautiful!"),
-        ProfileComment(username: "Alice", text: "Nice caption!")
+        ProfileComment(profilePicture: "eddiepic",username: "JaneDoe", text: "Beautiful!"),
+        ProfileComment(profilePicture: "eddiepic",username: "Alice", text: "Nice caption!")
     ]
 ),
     ProfileUserPost(
@@ -41,12 +41,12 @@ var posts: [ProfileUserPost] = [
     isLiked: false,
     isCoreMoment: false,
     likes: [
-        postLikedBy(username: "JaneDoe", profilePicture: "Beautiful photo!"),
-        postLikedBy(username: "Alice", profilePicture: "Nice caption!")
+        postLikedBy(username: "JaneDoe", profilePicture: "eddiepic", isFriend: true),
+        postLikedBy(username: "Alice", profilePicture: "eddiepic", isFriend: true)
     ],
     comments: [
-        ProfileComment(username: "JaneDoe", text: "Beautiful photo!"),
-        ProfileComment(username: "Alice", text: "Nice caption!")
+        ProfileComment(profilePicture: "eddiepic",username: "JaneDoe", text: "Beautiful photo!"),
+        ProfileComment(profilePicture: "eddiepic",username: "Alice", text: "Nice caption!")
     ]
 )]
 
