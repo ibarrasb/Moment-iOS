@@ -21,9 +21,9 @@ struct MainTabViewController: View {
                 Group {
                     FeedViewController()
                         .tabItem {
-                            Image(systemName: "house.fill")
+                            Image(systemName: "newspaper.fill")
                                 .font(.title)
-                            Text("Home")
+                            Text("Feed")
                         }
                         .tag(0)
                     
@@ -37,9 +37,9 @@ struct MainTabViewController: View {
                     
                     CreateViewController()
                         .tabItem {
-                            Image(systemName: "plus.circle.fill")
+                            Image(systemName: "house.fill")
                                 .font(.title)
-                            Text("Moment")
+                            Text("Home")
                         }
                         .tag(2)
                     

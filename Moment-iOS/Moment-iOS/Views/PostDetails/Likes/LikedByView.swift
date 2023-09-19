@@ -47,7 +47,6 @@ struct LikedByView: View {
                         UserRowView(user: user)
                     }
                     .listRowBackground(Color.black.opacity(0.9))
-
                 }
                 .listStyle(PlainListStyle())
                 .frame(height: geometry.size.height - 44) // Adjust the height of the list
