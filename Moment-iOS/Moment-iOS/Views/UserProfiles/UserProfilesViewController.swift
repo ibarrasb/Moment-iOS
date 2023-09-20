@@ -4,7 +4,6 @@
 //
 //  Created by eduardo.ibarra on 8/28/23.
 //
-
 import SwiftUI
 
 struct UserProfileUser {
@@ -19,71 +18,61 @@ struct UserContent {
     // Define the content properties you want to display (e.g., posts, photos, etc.)
 }
 
-struct UserProfilesViewController: View {
-    var user: UserProfileUser  // The user whose profile is being viewed
-    var content: UserContent   // Content associated with the user
-
-    @State private var selectedTab: Tab = .list
-
-    enum Tab {
-        case list
-        case calendar
-    }
-
-    var body: some View {
-        NavigationView {
-            ZStack {
-                Color.black.opacity(0.9).edgesIgnoringSafeArea(.all)
-                
-                VStack {
-                    UserProfileContent(user: user)
-                    
-                    if user.isPrivate && !user.isFriend {
-                        Text("You must be friends with this user to view their content.")
-                            .foregroundColor(.white)
-                            .padding()
-                    } else {
-                        HStack(spacing: 20) {
-                            CustomTabButton(title: "List", isSelected: selectedTab == .list) {
-                                selectedTab = .list
-                            }
-
-                            CustomTabButton(title: "Calendar", isSelected: selectedTab == .calendar) {
-                                selectedTab = .calendar
-                            }
-                        }
-                        .padding(.top, 25)
-                        .padding(.bottom, 10)
-
-                        if selectedTab == .list {
-                            Text("List View Content")
-                        } else {
-                            Text("Calendar View Content")
-                        }
-                    }
-
-                    Spacer()
-                }
-            }
-        }
-    }
-}
-
 struct UserProfileContent: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var user: UserProfileUser
     
     @State private var isFriendRequestPending = false
 
     var body: some View {
-        VStack(spacing: 10) {
-            HStack {
-                Text("Moment")
-                    .font(Font.custom("Bodoni 72 Smallcaps", size: 50))
-                    .foregroundColor(.white)
-                    .padding(.leading, 20)
-                Spacer()
+        VStack{
+            NavigationView {
+                
+                //used to keep top header in a fixed place
+                GeometryReader { geometry in
+                    ZStack {
+                        Color.black.opacity(0.9)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .edgesIgnoringSafeArea(.all)
+                        
+                        VStack {
+                            HStack {
+                                HStack {
+                                    // Custom back button
+                                    Button(action: {
+                                        self.presentationMode.wrappedValue.dismiss()
+                                    }) {
+                                        Image(systemName: "chevron.left") // You can use any back arrow image here
+                                            .foregroundColor(.white)
+                                            .padding(.leading, 16)
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    Text("")
+                                        .font(.headline)
+                                        .foregroundColor(.white)
+                                        .padding(.leading, -35)
+                                    Spacer()
+                                }
+                                .frame(height: 44)
+                                
+                                NavigationLink(destination: SettingsViewController().navigationBarBackButtonHidden(true)) {
+                                    Image(systemName: "ellipsis")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 25, height: 25)
+                                        .foregroundColor(.white)
+                                        .padding(.trailing, 20)
+                                }
+                            }
+                            .padding(.bottom, -1)
+                           
+                        }
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                    }
+                }
             }
-
             Button(action: {
                 // Handle profile picture update
             }) {
@@ -195,6 +184,56 @@ struct UserProfileContent: View {
         .padding(.horizontal)
         .padding(.top, 20)
         .navigationBarTitle("", displayMode: .inline)
+    }
+}
+
+struct UserProfilesViewController: View {
+    var user: UserProfileUser  // The user whose profile is being viewed
+    var content: UserContent   // Content associated with the user
+
+    @State private var selectedTab: Tab = .list
+
+    enum Tab {
+        case list
+        case calendar
+    }
+
+    var body: some View {
+        NavigationView {
+            ZStack {
+                Color.black.opacity(0.9).edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    UserProfileContent(user: user)
+                    
+                    if user.isPrivate && !user.isFriend {
+                        Text("You must be friends with this user to view their content.")
+                            .foregroundColor(.white)
+                            .padding()
+                    } else {
+                        HStack(spacing: 20) {
+                            CustomTabButton(title: "List", isSelected: selectedTab == .list) {
+                                selectedTab = .list
+                            }
+
+                            CustomTabButton(title: "Calendar", isSelected: selectedTab == .calendar) {
+                                selectedTab = .calendar
+                            }
+                        }
+                        .padding(.top, 25)
+                        .padding(.bottom, 10)
+
+                        if selectedTab == .list {
+                            Text("List View Content")
+                        } else {
+                            Text("Calendar View Content")
+                        }
+                    }
+
+                    Spacer()
+                }
+            }
+        }
     }
 }
 
