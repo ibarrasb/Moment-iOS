@@ -4,7 +4,6 @@
 //
 //  Created by eduardo.ibarra on 9/13/23.
 //
-
 import SwiftUI
 
 struct ProfileComment: Identifiable {
@@ -19,54 +18,73 @@ struct CommentsView: View {
     var comments: [ProfileComment]
     
     var body: some View {
-        VStack{
-            HStack {
-                // Custom back button
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    Image(systemName: "chevron.left") // You can use any back arrow image here
-                        .foregroundColor(.blue)
-                        .padding(.leading, 16)
+        GeometryReader { geometry in
+            VStack {
+                Color.black.edgesIgnoringSafeArea(.all)
+                
+                HStack {
+                    // Custom back button
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.blue)
+                            .padding(.leading, 16)
+                    }
+                    
+                    Spacer()
+                    
+                    Text("\(comments.count) Comments")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding(.leading, -35)
+                    Spacer()
                 }
+                .frame(height: 44)
                 
-                Spacer()
-                
-                Text("Comments")
+                List {
+                    ForEach(comments) { comment in
+                        CommentRowView(comment: comment)
+                    }
+                    .listRowBackground(Color.black.opacity(0.9))
+                }
+                .listStyle(PlainListStyle())
+                .frame(height: geometry.size.height - 44) // Adjust the height of the list
+            }
+            .background(Color.black)
+        }
+    }
+}
+
+struct CommentRowView: View {
+    var comment: ProfileComment
+    
+    var body: some View {
+        HStack {
+            Button(action: {
+                // Handle profile picture update
+            }) {
+                Image(comment.profilePicture)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 60, height: 60)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.white, lineWidth: 3))
+                    .shadow(radius: 5)
+            }
+            .padding(.bottom, 10)
+            
+            VStack(alignment: .leading, spacing: 4) {
+                Text(comment.username)
                     .font(.headline)
                     .foregroundColor(.white)
-                    .padding(.leading, -35)
-                Spacer()
+                
+                Text(comment.text)
+                    .font(.body)
+                    .foregroundColor(.white)
             }
-            .frame(height: 44)
-            
-            List {
-                ForEach(comments) { comment in
-                    HStack {
-                        Button(action: {
-                            // Handle profile picture update
-                        }) {
-                            Image(comment.profilePicture)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 60, height: 60)
-                                .clipShape(Circle())
-                                .overlay(Circle().stroke(Color.white, lineWidth: 3))
-                                .shadow(radius: 5)
-                        }
-                        .padding(.bottom, 10)
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(comment.username)
-                                .font(.headline)
-                            
-                            Text(comment.text)
-                                .font(.body)
-                        }
-                    }
-                }
-            }
-            .listStyle(InsetListStyle())
         }
+        .listRowBackground(Color.black.opacity(0.9))
     }
 }
 
@@ -82,4 +100,3 @@ struct CommentsView_Previews: PreviewProvider {
         CommentsView(comments: sampleComments)
     }
 }
-

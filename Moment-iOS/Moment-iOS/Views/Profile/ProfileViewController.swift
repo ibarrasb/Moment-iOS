@@ -8,6 +8,7 @@ import SwiftUI
 
 struct User {
     let name: String
+    let username: String
     let bio: String
     let friendCount: Int
     let isPrivate: Bool
@@ -81,7 +82,7 @@ struct ProfileViewController: View {
                         .padding(.bottom, -1)
                         
                         // Move the user and ProfileContent here
-                        let user = User(name: "Eddie Ibarra", bio: "Dallas // ", friendCount: 200, isPrivate: false)
+                        let user = User(name: "Eddie Ibarra", username: "ebarrra", bio: "Dallas // ", friendCount: 200, isPrivate: false)
                         ProfileContent(user: user)
                     }
                     .frame(width: geometry.size.width, height: geometry.size.height)
@@ -134,11 +135,16 @@ struct ProfileContent: View {
                         .foregroundColor(.white)
                         .padding(.bottom, 10)
                 }
-                
+               
                 Text(user.name)
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
+                
+                Text("@\(user.username)")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding(.bottom, 10)
                 
                 Text(user.bio)
                     .font(.headline)
