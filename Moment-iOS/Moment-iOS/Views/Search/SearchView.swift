@@ -4,14 +4,13 @@
 //
 //  Created by eduardo.ibarra on 8/28/23.
 //
-
 import SwiftUI
+
 struct SearchBar: View {
     @Binding var text: String
 
     var body: some View {
         HStack {
-           
             TextField("Search", text: $text)
                 .foregroundColor(.black)
                 
@@ -63,7 +62,6 @@ struct SearchView: View {
                     SearchBar(text: $searchText)
                         .padding(.horizontal, 5)
                         .padding(.bottom, 625)
-                        
                 }
             }
         }

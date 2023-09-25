@@ -59,15 +59,11 @@ struct MainTabViewController: View {
                         }
                         .tag(4)
                 }
-                
             }
             .navigationBarHidden(true) // Hide the navigation bar
             .accentColor(.white) // Set the selected tab color
-           
         }
-        
     }
-    
 }
 
 struct MainTabViewController_Previews: PreviewProvider {
