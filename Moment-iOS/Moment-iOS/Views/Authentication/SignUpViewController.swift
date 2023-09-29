@@ -77,6 +77,7 @@ struct SignUpViewController: View {
             
             HStack {
                 Text("Already have an account?")
+                    .foregroundColor(.white)
                 Button(action: {
                     // Handle sign up action
                 }) {

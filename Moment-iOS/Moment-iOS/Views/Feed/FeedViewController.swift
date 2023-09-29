@@ -7,35 +7,37 @@
 
 import SwiftUI
 
+var feedPosts: [UserPost] = [UserPost(
+    username: "Eddie Ibarra",
+    profilePicture: "photo",
+    photos: ["photo", "photo2"],
+    caption: "A great moment to remember",
+    timePosted: Date(),
+    isLiked: false,
+    likes: 15,
+    comments: [
+        ProfileComment(profilePicture: "eddiepic",username: "JaneDoe", text: "Beautiful photo!"),
+        ProfileComment(profilePicture: "eddiepic",username: "Alice", text: "Nice caption dude!")
+    ]
+),
+UserPost(
+    username: "JohnDoe",
+    profilePicture: "photo",
+    photos: ["photo"],
+    caption: "A great moment to remember!",
+    timePosted: Date(),
+    isLiked: false,
+    likes: 15,
+    comments: [
+        ProfileComment(profilePicture: "eddiepic",username: "JaneDoe", text: "Beautiful photo!"),
+        ProfileComment(profilePicture: "eddiepic",username: "Alice", text: "Nice caption!")
+    ]
+)] // Replace this with your actual posts data
+
+
 struct FeedViewController: View {
     // Define your posts data here
-    var posts: [UserPost] = [UserPost(
-        username: "Eddie Ibarra",
-        profilePicture: "photo",
-        photos: ["photo", "photo2"],
-        caption: "A great moment to remember",
-        timePosted: Date(),
-        isLiked: false,
-        likes: 15,
-        comments: [
-            ProfileComment(profilePicture: "eddiepic",username: "JaneDoe", text: "Beautiful photo!"),
-            ProfileComment(profilePicture: "eddiepic",username: "Alice", text: "Nice caption dude!")
-        ]
-    ),
-    UserPost(
-        username: "JohnDoe",
-        profilePicture: "photo",
-        photos: ["photo"],
-        caption: "A great moment to remember!",
-        timePosted: Date(),
-        isLiked: false,
-        likes: 15,
-        comments: [
-            ProfileComment(profilePicture: "eddiepic",username: "JaneDoe", text: "Beautiful photo!"),
-            ProfileComment(profilePicture: "eddiepic",username: "Alice", text: "Nice caption!")
-        ]
-    )] // Replace this with your actual posts data
-
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -61,7 +63,7 @@ struct FeedViewController: View {
                     }
                     .padding(.top, 0)
 
-                    FollowingContent(posts: posts)
+                    FollowingContent(posts: feedPosts)
                 }
             
             }

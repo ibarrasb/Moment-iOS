@@ -27,6 +27,8 @@
 		E9AF12032A9D654600A8A1C4 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF12022A9D654600A8A1C4 /* FeedViewController.swift */; };
 		E9AF12062A9D696C00A8A1C4 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF12052A9D696C00A8A1C4 /* NotificationsView.swift */; };
 		E9AF12092A9D69C200A8A1C4 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF12082A9D69C200A8A1C4 /* SearchView.swift */; };
+		E9B733102AC724A3001FA8B4 /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B7330F2AC724A3001FA8B4 /* CustomViews.swift */; };
+		E9B733122AC72675001FA8B4 /* ProfileContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B733112AC72675001FA8B4 /* ProfileContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		E9AF12022A9D654600A8A1C4 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		E9AF12052A9D696C00A8A1C4 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		E9AF12082A9D69C200A8A1C4 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		E9B7330F2AC724A3001FA8B4 /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
+		E9B733112AC72675001FA8B4 /* ProfileContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,7 @@
 				E9A90D5F2AA28D42001D7B59 /* Messages */,
 				E9AF12072A9D69AA00A8A1C4 /* Search */,
 				E9AA14612A9F19A70012158B /* MainTab */,
+				E9B7330F2AC724A3001FA8B4 /* CustomViews.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				E9AF11F72A9C6B1A00A8A1C4 /* ProfileViewController.swift */,
+				E9B733112AC72675001FA8B4 /* ProfileContent.swift */,
 				E9A90D5D2AA267DA001D7B59 /* SettingsViewController.swift */,
 				E98E522D2AACD1FD00B0CD0D /* ProfileCalendarContent */,
 				E98E522C2AACD1E600B0CD0D /* ProfileListContent */,
@@ -401,6 +407,8 @@
 				E9A90D5C2AA26757001D7B59 /* CreateViewController.swift in Sources */,
 				E98E522F2AB2B9E900B0CD0D /* ProfileListContent.swift in Sources */,
 				E9AF11CF2A98042300A8A1C4 /* Moment_iOSApp.swift in Sources */,
+				E9B733122AC72675001FA8B4 /* ProfileContent.swift in Sources */,
+				E9B733102AC724A3001FA8B4 /* CustomViews.swift in Sources */,
 				E9A90D5E2AA267DA001D7B59 /* SettingsViewController.swift in Sources */,
 				E9AF12032A9D654600A8A1C4 /* FeedViewController.swift in Sources */,
 				E9AF12062A9D696C00A8A1C4 /* NotificationsView.swift in Sources */,
