@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//data for posts on the user feed 
 var feedPosts: [UserPost] = [UserPost(
     username: "Eddie Ibarra",
     profilePicture: "photo",
