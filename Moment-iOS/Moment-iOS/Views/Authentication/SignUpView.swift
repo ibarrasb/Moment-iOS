@@ -2,7 +2,7 @@
 //  SignUpView.swift
 //  Moment-iOS
 //
-//  Updated by ChatGPT on 8/6/25
+//  Updated by eduardo on 8/6/25
 //
 
 import SwiftUI
