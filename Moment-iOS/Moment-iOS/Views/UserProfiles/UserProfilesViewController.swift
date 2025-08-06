@@ -219,7 +219,7 @@ struct UserProfilesViewController: View {
 
 struct UserProfilesViewController_Previews: PreviewProvider {
     static var previews: some View {
-        let user = UserProfileUser(name: "Susana Sainz", bio: "bio", friendCount: 250, isPrivate: false, isFriend: true)
+        let user = UserProfileUser(name: "Susana Sainz", bio: "bio", friendCount: 250, isPrivate: false, isFriend: false)
         let content = UserContent()
         return UserProfilesViewController(user: user, content: content)
     }

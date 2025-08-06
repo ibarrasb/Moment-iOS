@@ -14,14 +14,14 @@
 		E9A90D5E2AA267DA001D7B59 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A90D5D2AA267DA001D7B59 /* SettingsViewController.swift */; };
 		E9A90D612AA28D67001D7B59 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A90D602AA28D67001D7B59 /* MessagesViewController.swift */; };
 		E9A90D652AA91058001D7B59 /* FollowingContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A90D642AA91058001D7B59 /* FollowingContent.swift */; };
-		E9AA14632A9F19CA0012158B /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA14622A9F19CA0012158B /* MainTabViewController.swift */; };
+		E9AA14632A9F19CA0012158B /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA14622A9F19CA0012158B /* MainTabView.swift */; };
 		E9AA14662A9F32180012158B /* EngagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AA14652A9F32180012158B /* EngagementViewController.swift */; };
 		E9AF11CF2A98042300A8A1C4 /* Moment_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF11CE2A98042300A8A1C4 /* Moment_iOSApp.swift */; };
 		E9AF11D12A98042300A8A1C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF11D02A98042300A8A1C4 /* ContentView.swift */; };
 		E9AF11D32A98042500A8A1C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9AF11D22A98042500A8A1C4 /* Assets.xcassets */; };
 		E9AF11D62A98042500A8A1C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9AF11D52A98042500A8A1C4 /* Preview Assets.xcassets */; };
-		E9AF11F22A991C9900A8A1C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF11F12A991C9900A8A1C4 /* LoginViewController.swift */; };
-		E9AF11F62A992AC900A8A1C4 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF11F52A992AC900A8A1C4 /* SignUpViewController.swift */; };
+		E9AF11F22A991C9900A8A1C4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF11F12A991C9900A8A1C4 /* LoginView.swift */; };
+		E9AF11F62A992AC900A8A1C4 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF11F52A992AC900A8A1C4 /* SignUpView.swift */; };
 		E9AF11F82A9C6B1A00A8A1C4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF11F72A9C6B1A00A8A1C4 /* ProfileViewController.swift */; };
 		E9AF12002A9D5B5100A8A1C4 /* UserProfilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF11FF2A9D5B5100A8A1C4 /* UserProfilesViewController.swift */; };
 		E9AF12032A9D654600A8A1C4 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AF12022A9D654600A8A1C4 /* FeedViewController.swift */; };
@@ -39,15 +39,15 @@
 		E9A90D5D2AA267DA001D7B59 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E9A90D602AA28D67001D7B59 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		E9A90D642AA91058001D7B59 /* FollowingContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingContent.swift; sourceTree = "<group>"; };
-		E9AA14622A9F19CA0012158B /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		E9AA14622A9F19CA0012158B /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		E9AA14652A9F32180012158B /* EngagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngagementViewController.swift; sourceTree = "<group>"; };
 		E9AF11CB2A98042300A8A1C4 /* Moment-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Moment-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AF11CE2A98042300A8A1C4 /* Moment_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moment_iOSApp.swift; sourceTree = "<group>"; };
 		E9AF11D02A98042300A8A1C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E9AF11D22A98042500A8A1C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9AF11D52A98042500A8A1C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E9AF11F12A991C9900A8A1C4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		E9AF11F52A992AC900A8A1C4 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E9AF11F12A991C9900A8A1C4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E9AF11F52A992AC900A8A1C4 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		E9AF11F72A9C6B1A00A8A1C4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E9AF11FF2A9D5B5100A8A1C4 /* UserProfilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilesViewController.swift; sourceTree = "<group>"; };
 		E9AF12022A9D654600A8A1C4 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		E9AA14612A9F19A70012158B /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
-				E9AA14622A9F19CA0012158B /* MainTabViewController.swift */,
+				E9AA14622A9F19CA0012158B /* MainTabView.swift */,
 			);
 			path = MainTab;
 			sourceTree = "<group>";
@@ -283,8 +283,8 @@
 		E9AF11F02A9909EB00A8A1C4 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				E9AF11F12A991C9900A8A1C4 /* LoginViewController.swift */,
-				E9AF11F52A992AC900A8A1C4 /* SignUpViewController.swift */,
+				E9AF11F12A991C9900A8A1C4 /* LoginView.swift */,
+				E9AF11F52A992AC900A8A1C4 /* SignUpView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -392,7 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9AF11F22A991C9900A8A1C4 /* LoginViewController.swift in Sources */,
+				E9AF11F22A991C9900A8A1C4 /* LoginView.swift in Sources */,
 				E9323C2B2AB63A0D00F2AA37 /* LikedByView.swift in Sources */,
 				E9AF12092A9D69C200A8A1C4 /* SearchView.swift in Sources */,
 				E98E52322AB2C38C00B0CD0D /* CommentsView.swift in Sources */,
@@ -400,8 +400,8 @@
 				E9AF12002A9D5B5100A8A1C4 /* UserProfilesViewController.swift in Sources */,
 				E9AF11F82A9C6B1A00A8A1C4 /* ProfileViewController.swift in Sources */,
 				E9AA14662A9F32180012158B /* EngagementViewController.swift in Sources */,
-				E9AA14632A9F19CA0012158B /* MainTabViewController.swift in Sources */,
-				E9AF11F62A992AC900A8A1C4 /* SignUpViewController.swift in Sources */,
+				E9AA14632A9F19CA0012158B /* MainTabView.swift in Sources */,
+				E9AF11F62A992AC900A8A1C4 /* SignUpView.swift in Sources */,
 				E9A90D652AA91058001D7B59 /* FollowingContent.swift in Sources */,
 				E9A90D612AA28D67001D7B59 /* MessagesViewController.swift in Sources */,
 				E9A90D5C2AA26757001D7B59 /* CreateViewController.swift in Sources */,
